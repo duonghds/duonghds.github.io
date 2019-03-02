@@ -56,8 +56,71 @@
     border: 1px solid aqua;
     background-color: white;
     z-index: 999;
-    box-shadow: 10px 10px;
+    position: relative;
+    display: block;
 }
+
+.behind-background{
+    width: 100%;
+    height: 35%;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+
+.background-profile{
+    width: 100%;
+    height: 100%;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+}
+
+.avatar-profile{
+    width:100%;
+    height:100%;
+    border-radius: 100%;
+    border: 2px solid white;
+}
+
+.avatar{
+    width: 150px;
+    height: 150px;
+    margin-left: 125px;
+    margin-top: -60px;
+    border-radius: 100%;
+}
+
+.name-profile{
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: sans-serif;
+    color: aqua;
+}
+
+.title-job{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: aqua;
+}
+
+.social-icon{
+    margin-top: 10px;
+}
+
+.social-icon ul{
+    white-space: nowrap;
+}
+
+.social-icon ul li{
+    list-style-type: none; 
+    width: 20px;
+    height: 20px;
+    margin-left: 110px;
+}
+
 
 .content{
     z-index: 10;
@@ -70,5 +133,17 @@
     -webkit-border-radius: 7px;
     border: 1px solid aqua;
     background-color: white;
-    box-shadow: 10px 10px;
+    display: block;
 }
+@media only screen and (max-width: 600px) {
+    .top-menu{
+        margin-top: 0px;
+        margin-left: 0px;
+        width: 600px;
+    }
+
+    .top-menu ul{
+        white-space: nowrap;
+    }
+  }
+  
