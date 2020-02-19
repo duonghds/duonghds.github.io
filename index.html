@@ -7,10 +7,36 @@
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css'><link rel="stylesheet" href="./style.css">
 
 </head>
+<style>
+.couple img{
+    border-radius: 50%;
+    border: white 2px solid;
+    margin-top: 3px;
+}
+@media screen and (max-width: 824px) {
+  #app-cover {
+    top: 46%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+@media screen and (min-width: 825px) {
+  #app-cover {
+    top: 66%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+</style>
 <body>
 <!-- partial:index.partial.html -->
 <!-- Tracks used in this music/audio player application are free to use. I downloaded them from Soundcloud and NCS websites. I am not the owner of these tracks. -->
-
+    <div style="top: 25%; height: 200px; position: absolute; z-index: 9999; width: 100%;">
+        <div class="couple" style="width: 60%; margin-left: auto; margin-right: auto; text-align: center; border-radius: 20px; border: solid white 2px;">
+            <a href="https://www.facebook.com/hdsduong24"><img src="http://graph.facebook.com/100002102711329/picture?type=normal"></a>
+            <a href="https://www.facebook.com/my.nguyenhieu"><img src="http://graph.facebook.com/100004732504862/picture?type=normal" style="margin-left: 10px;"></a>
+        </div>
+        <div onclick="showAlbumPopup();" style="cursor: pointer; font-size: 25px; background-color: white; height: 30px;width: 10%; margin-left: auto; margin-right: auto; text-align: center; border-radius: 5px; border: solid white 2px;">
+            Album
+        </div>
+    </div>
     <div id="app-cover">
         <div id="bg-artwork"></div>
         <div id="bg-layer"></div>
@@ -55,6 +81,10 @@
     </div>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
-
 </body>
+<script>
+    function showAlbumPopup() {
+        alert("Chưa có bạn ie");
+    }
+</script>
 </html>
