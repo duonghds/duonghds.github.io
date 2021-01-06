@@ -14,47 +14,6 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <style>
-    .couple img {
-      border-radius: 50%;
-      border: white 2px solid;
-      margin-top: 3px;
-    }
-    @media screen and (max-width: 824px) {
-      #app-cover {
-        top: 46%; /* The width is 100%, when the viewport is 800px or smaller */
-      }
-    }
-
-    @media screen and (min-width: 825px) {
-      #app-cover {
-        top: 66%; /* The width is 100%, when the viewport is 800px or smaller */
-      }
-    }
-
-    .modal {
-      display: none; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 999999; /* Sit on top */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0, 0, 0); /* Fallback color */
-      background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-    }
-
-    /* Modal Content/Box */
-    .modal-content {
-      border-radius: 20px;
-      background-color: #fefefe;
-      margin: 15% auto; /* 15% from the top and centered */
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%; /* Could be more or less, depending on screen size */
-    }
-
-    /* The Close Button */
     .close {
       color: #aaa;
       float: right;
@@ -68,41 +27,6 @@
       text-decoration: none;
       cursor: pointer;
     }
-    /* Modal Header */
-    .modal-header {
-      border-radius: 20px 20px 0px 0px;
-      padding: 2px 16px;
-      background-color: white;
-      color: black;
-    }
-
-    /* Modal Body */
-    .modal-body {
-      padding: 2px 16px;
-    }
-
-    /* Modal Footer */
-    .modal-footer {
-        border-radius: 0px 0px 20px 20px;
-      padding: 2px 16px;
-      background-color: white;
-      color: black;
-    }
-
-    /* Modal Content */
-    .modal-content {
-      position: relative;
-      background-color: #fefefe;
-      margin: auto;
-      padding: 0;
-      border: 1px solid #888;
-      width: 80%;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      animation-name: animatetop;
-      animation-duration: 0.5s;
-    }
-
     /* Add Animation */
     @keyframes animatetop {
       from {
@@ -124,47 +48,6 @@
     }
   </style>
   <body>
-    <div id="myModal" class="modal" style="display: none;">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <div class="modal-header">
-          <span class="close">&times;</span>
-          <h2 style="text-align: center;">From 14/2</h2>
-        </div>
-        <div class="modal-body" id="modal-body">
-          <img src="Album/1.jpg" />
-          <img src="Album/2.jpg" />
-          <img src="Album/3.jpg" />
-        </div>
-        <div class="modal-footer">
-          <h3 style="text-align: center;">To now</h3>
-        </div>
-      </div>
-    </div>
-    <div
-      style="top: 25%; height: 200px; position: absolute; z-index: 9999; width: 100%;"
-    >
-      <div
-        class="couple"
-        style="width: 60%; margin-left: auto; margin-right: auto; text-align: center; border-radius: 20px; border: solid white 2px;"
-      >
-        <a href="https://www.facebook.com/hdsduong24"
-          ><img
-            src="http://graph.facebook.com/100002102711329/picture?type=normal"
-        /></a>
-        <a href="https://www.facebook.com/my.nguyenhieu"
-          ><img
-            src="http://graph.facebook.com/100004732504862/picture?type=normal"
-            style="margin-left: 10px;"
-        /></a>
-      </div>
-      <div
-        onclick="showPopup();"
-        style="cursor: pointer; font-size: 25px; background-color: white; height: 30px;width: 10%; margin-left: auto; margin-right: auto; text-align: center; border-radius: 5px; border: solid white 2px;"
-      >
-        Album
-      </div>
-    </div>
     <div id="app-cover">
       <div id="bg-artwork"></div>
       <div id="bg-layer"></div>
@@ -219,10 +102,6 @@
     var modal = document.getElementById("myModal");
 
     var span = document.getElementsByClassName("close")[0];
-
-    function showPopup() {
-      modal.style.display = "block";
-    }
 
     span.onclick = function() {
       modal.style.display = "none";
