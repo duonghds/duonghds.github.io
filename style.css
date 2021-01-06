@@ -28,7 +28,7 @@ body
     right: -30px;
     bottom: -30px;
     left: -30px;
-    background-image: url("./Background/bg1.jpg");
+    background-image: url("./Background/bg2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
@@ -121,7 +121,7 @@ body
 
 #track-time.active #current-time, #track-time.active #track-length
 {
-    color: #f86d92;
+    color: deepskyblue;
     background-color: transparent;
 }
 
@@ -173,7 +173,7 @@ body
     bottom: 0;
     left: 0;
     width: 0;
-    background-color: #fd6d94;
+    background-color: deepskyblue;
     -webkit-transition: 0.2s ease width;
     transition: 0.2s ease width;
     z-index: 1;
