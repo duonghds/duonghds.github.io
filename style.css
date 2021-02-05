@@ -357,3 +357,36 @@ body
 {
     color: #fff;
 }
+
+.button-cv {
+    z-index: 3;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    width: 40%;
+    box-shadow: 5px 5px 5px;
+    cursor: pointer;
+    border: 0px;
+    transition: background-color 0.3s ease-in;
+}
+
+.button-cv:active {
+    transform: translate(5px ,5px);
+}
+
+.button-cv:hover {
+    background-color: lightskyblue;
+    transition-property: transform;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+    transition: background-color 0.4s ease-out;
+    transform-origin: 0 50%;
+}

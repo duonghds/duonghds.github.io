@@ -26,12 +26,14 @@ $(function () {
             name: "Gác Lại Âu Lo",
             url: "Musics/gac_lai_au_lo.mp3",
             picture: "Background/doge.png"
-        }, {
-            artist: "TeA & Mr Shyn",
-            name: "Hương Rừng",
-            url: "Musics/huong_rung.mp3",
-            picture: "Background/doge.png"
-        }, {
+        },
+        // {
+        //     artist: "TeA & Mr Shyn",
+        //     name: "Hương Rừng",
+        //     url: "Musics/huong_rung.mp3",
+        //     picture: "Background/doge.png"
+        // },
+        {
             artist: "Mỹ Tâm",
             name: "Nếu Anh Đi",
             url: "Musics/neu_anh_di.mp3",
