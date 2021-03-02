@@ -1,266 +1,209 @@
-$(function () {
-    var playerTrack = $("#player-track");
-    var bgArtwork = $('#bg-artwork');
-    var bgArtworkUrl;
-    var albumName = $('#album-name');
-    var trackName = $('#track-name');
-    var albumArt = $('#album-art'),
-        sArea = $('#s-area'),
-        seekBar = $('#seek-bar'),
-        trackTime = $('#track-time'),
-        insTime = $('#ins-time'),
-        sHover = $('#s-hover'),
-        playPauseButton = $("#play-pause-button"),
-        i = playPauseButton.find('i'),
-        tProgress = $('#current-time'),
-        tTime = $('#track-length'),
-        seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds,
-        playProgress, bTime, nTime = 0,
-        buffInterval = null, tFlag = false;
+let tabAboutMe = null
+let tabEducation = null
+let tabExperience = null
+let infoTable = null
 
-    var playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
+function chooseLanguageVietnam() {
+    window.sessionStorage.setItem('language', 'vi')
+    closeLanguagePopup();
+    setTextVietnamese();
+    displayLineCard();
+}
 
-    var songs = [
-        {
-            artist: "Da LAB & Miu Lê",
-            name: "Gác Lại Âu Lo",
-            url: "Musics/gac_lai_au_lo.mp3",
-            picture: "Background/doge.png"
-        },
-        // {
-        //     artist: "TeA & Mr Shyn",
-        //     name: "Hương Rừng",
-        //     url: "Musics/huong_rung.mp3",
-        //     picture: "Background/doge.png"
-        // },
-        {
-            artist: "Mỹ Tâm",
-            name: "Nếu Anh Đi",
-            url: "Musics/neu_anh_di.mp3",
-            picture: "Background/doge.png"
-        }
-    ];
+function chooseLanguageEnglish() {
+    window.sessionStorage.setItem('language', 'en')
+    closeLanguagePopup();
+    setTextEnglish();
+    displayLineCard();
+}
 
-    function shuffle(a) {
-        var j, x, i;
-        for (i = a.length - 1; i > 0; i--) {
-            j = Math.floor(Math.random() * (i + 1));
-            x = a[i];
-            a[i] = a[j];
-            a[j] = x;
-        }
-        return a;
+function closeLanguagePopup() {
+    document.getElementById('popup-language').style.transform = "scale(0)";
+    setTimeout(() => {
+        document.getElementById('popup-background').style.display = "none";
+    }, 300)
+}
+
+function getYearsOld() {
+    let date = new Date();
+    return date.getFullYear() - 1997;
+}
+
+function setTextEnglish() {
+    let textArray = [
+        'ABOUT ME', 'EDUCATION', 'EXPERIENCE',
+        "Except handsome, rich and well-studying are something i don't have, i'm also had so much else negative. Click this tab to explorer more about me and be my part of life.",
+        "I'm a Information Technology student of Ho Chi Minh University of Science - Vietnam National University. I can install windows for you but idk how to repair household appliances",
+        "In my childhood, i spend to much time to PC game, my mom always admonish because that, so that why i wanna to become a member of some game online company. And now, i'm a software engineer of VNG Corp",
+        getYearsOld().toString(),
+        'YEARS OLD',
+        'HEIGHT(cm)',
+        '1', 'TRAVEL',
+        'GRADUATED',
+        'COMPANY',
+        'PRODUCT',
+        'YEARS EXP'
+    ]
+    setText(textArray)
+}
+
+function setTextVietnamese() {
+    let textArray = [
+        'BẢN THÂN', 'HỌC VẤN', 'KINH NGHIỆM',
+        "Ngoại trừ đẹp trai, nhà giàu, học giỏi là những thứ tui chưa có ra thì tui cũng còn rất nhiều thứ khác chưa tốt. Nhấn vào thẻ này để tìm hiểu thêm dề tui và tui cũng muốn bạn trở thành một phần trong hành trình cuộc sống.",
+        "Là sinh viên khoa Công nghệ thông tin trường Đại học Khoa học Tự nhiên - Đại học quốc gia TP.HCM. Tui biết cài win nhưng không biết sửa đồ điện gia dụng",
+        "Hồi nhỏ tui ghiền chơi điện tử lắm, nhưng mà bị má chửi hoài nên mong muốn được vào công ty game để được chơi game một cách hợp pháp. Hiện tại tui đang là dev tại công ty VNG",
+        getYearsOld().toString(),
+        'TUỔI',
+        'CAO(cm)',
+        '1', 'NƯỚC ĐI QUA',
+        'TỐT NGHIỆP',
+        'CÔNG TY',
+        'SẢN PHẨM',
+        'NĂM KN'
+
+    ]
+    setText(textArray)
+}
+
+function setText(textArray) {
+    document.getElementById('about-me').innerText = textArray[0]
+    document.getElementById('education').innerText = textArray[1]
+    document.getElementById('experience').innerText = textArray[2]
+
+    document.getElementById('about-me-des').innerText = textArray[3]
+    document.getElementById('education-des').innerText = textArray[4]
+    document.getElementById('experience-des').innerText = textArray[5]
+
+    document.getElementById('years-old-numb').innerText = textArray[6]
+    document.getElementById('years-old').innerText = textArray[7]
+    document.getElementById('height').innerText = textArray[8]
+    document.getElementById('nation-numb').innerText = textArray[9]
+    document.getElementById('nation').innerText = textArray[10]
+    document.getElementById('graduated').innerText = textArray[11]
+    document.getElementById('company').innerText = textArray[12]
+    document.getElementById('product').innerText = textArray[13]
+    document.getElementById('experience-doing').innerText = textArray[14]
+}
+
+function displayLineCard() {
+    let lineCard = document.getElementById('line-card')
+    lineCard.style.display = "flex"
+    setTimeout(() => {
+        lineCard.style.transform = "scale(1)"
+    }, 300)
+}
+
+function getOffset(el) {
+    const rect = el.getBoundingClientRect();
+    return {
+        left: rect.left + window.scrollX,
+        top: rect.top + window.scrollY
+    };
+}
+
+function toggleTabAboutMe() {
+    if (tabAboutMe.classList.contains('active')) {
+        tabAboutMe.style.transform = 'translateX(0px)'
+        tabAboutMe.classList.remove('active')
+        offInfoTable()
+    } else {
+        displayInfoTable();
+        tabAboutMe.style.transform = 'translateX(-200px)'
+        tabEducation.style.transform = 'translateX(0px)'
+        tabExperience.style.transform = 'translateX(0px)'
+        tabAboutMe.classList.add('active')
     }
+}
 
-    songs = shuffle(songs);
-
-    function playPause() {
-        setTimeout(function () {
-            if (audio.paused) {
-                playerTrack.addClass('active');
-                albumArt.addClass('active');
-                checkBuffering();
-                i.attr('class', 'fas fa-pause');
-                audio.play();
-            } else {
-                playerTrack.removeClass('active');
-                albumArt.removeClass('active');
-                clearInterval(buffInterval);
-                albumArt.removeClass('buffering');
-                i.attr('class', 'fas fa-play');
-                audio.pause();
-            }
-        }, 300);
+function toggleTabEducation() {
+    if (tabEducation.classList.contains('active')) {
+        tabEducation.style.transform = 'translateX(0px)'
+        tabAboutMe.style.transform = 'translateX(0px)'
+        tabEducation.classList.remove('active')
+        offInfoTable()
+    } else {
+        displayInfoTable();
+        tabEducation.style.transform = 'translateX(-495px)'
+        tabExperience.style.transform = 'translateX(0px)'
+        tabAboutMe.style.transform = 'translateX(400px)'
+        tabEducation.classList.add('active')
     }
+}
 
-
-    function showHover(event) {
-        seekBarPos = sArea.offset();
-        seekT = event.clientX - seekBarPos.left;
-        seekLoc = audio.duration * (seekT / sArea.outerWidth());
-
-        sHover.width(seekT);
-
-        cM = seekLoc / 60;
-
-        ctMinutes = Math.floor(cM);
-        ctSeconds = Math.floor(seekLoc - ctMinutes * 60);
-
-        if ((ctMinutes < 0) || (ctSeconds < 0))
-            return;
-
-        if ((ctMinutes < 0) || (ctSeconds < 0))
-            return;
-
-        if (ctMinutes < 10)
-            ctMinutes = '0' + ctMinutes;
-        if (ctSeconds < 10)
-            ctSeconds = '0' + ctSeconds;
-
-        if (isNaN(ctMinutes) || isNaN(ctSeconds))
-            insTime.text('--:--');
-        else
-            insTime.text(ctMinutes + ':' + ctSeconds);
-
-        insTime.css({'left': seekT, 'margin-left': '-21px'}).fadeIn(0);
-
+function toggleTabExperience() {
+    if (tabExperience.classList.contains('active')) {
+        tabExperience.style.transform = 'translateX(0px)'
+        tabAboutMe.style.transform = 'translateX(0px)'
+        tabExperience.classList.remove('active')
+        offInfoTable()
+    } else {
+        displayInfoTable();
+        tabExperience.style.transform = 'translateX(-790px)'
+        tabAboutMe.style.transform = 'translateX(700px)'
+        tabEducation.style.transform = 'translateX(0px)'
+        tabExperience.classList.add('active')
     }
+}
 
-    function hideHover() {
-        sHover.width(0);
-        insTime.text('00:00').css({'left': '0px', 'margin-left': '0px'}).fadeOut(0);
+function displayInfoTable() {
+    let translateX = getOffset(tabAboutMe).left + 500 + tabAboutMe.offsetWidth / 2;
+    let translateY = getOffset(tabAboutMe).top / 2;
+    console.log(translateY)
+    infoTable.style.display = "flex";
+    setTimeout(() => {
+        infoTable.style.transform = `scale(1) translateX(${translateX}px) translateY(${translateY}px)`;
+    }, 0)
+}
+
+function offInfoTable() {
+    infoTable.style.transform = `scale(0) translate(0px, 0px)`
+    setTimeout(() => {
+        infoTable.style.display = "none"
+    }, 300)
+}
+
+document.addEventListener("DOMContentLoaded", function (event) {
+    initItemDOM();
+    initEventListener();
+    let language = window.sessionStorage.getItem('language')
+    if (!language) {
+        document.getElementById('popup-background').style.display = "block"
+        return;
     }
-
-    function playFromClickedPos() {
-        audio.currentTime = seekLoc;
-        seekBar.width(seekT);
-        hideHover();
-    }
-
-    function updateCurrTime() {
-        nTime = new Date();
-        nTime = nTime.getTime();
-
-        if (!tFlag) {
-            tFlag = true;
-            trackTime.addClass('active');
-        }
-
-        curMinutes = Math.floor(audio.currentTime / 60);
-        curSeconds = Math.floor(audio.currentTime - curMinutes * 60);
-
-        durMinutes = Math.floor(audio.duration / 60);
-        durSeconds = Math.floor(audio.duration - durMinutes * 60);
-
-        playProgress = (audio.currentTime / audio.duration) * 100;
-
-        if (curMinutes < 10)
-            curMinutes = '0' + curMinutes;
-        if (curSeconds < 10)
-            curSeconds = '0' + curSeconds;
-
-        if (durMinutes < 10)
-            durMinutes = '0' + durMinutes;
-        if (durSeconds < 10)
-            durSeconds = '0' + durSeconds;
-
-        if (isNaN(curMinutes) || isNaN(curSeconds))
-            tProgress.text('00:00');
-        else
-            tProgress.text(curMinutes + ':' + curSeconds);
-
-        if (isNaN(durMinutes) || isNaN(durSeconds))
-            tTime.text('00:00');
-        else
-            tTime.text(durMinutes + ':' + durSeconds);
-
-        if (isNaN(curMinutes) || isNaN(curSeconds) || isNaN(durMinutes) || isNaN(durSeconds))
-            trackTime.removeClass('active');
-        else
-            trackTime.addClass('active');
-
-
-        seekBar.width(playProgress + '%');
-
-        if (playProgress == 100) {
-            i.attr('class', 'fa fa-play');
-            seekBar.width(0);
-            tProgress.text('00:00');
-            albumArt.removeClass('buffering').removeClass('active');
-            clearInterval(buffInterval);
-            selectTrack(1);
-        }
-    }
-
-    function checkBuffering() {
-        clearInterval(buffInterval);
-        buffInterval = setInterval(function () {
-            if ((nTime == 0) || (bTime - nTime) > 1000)
-                albumArt.addClass('buffering');
-            else
-                albumArt.removeClass('buffering');
-
-            bTime = new Date();
-            bTime = bTime.getTime();
-
-        }, 100);
-    }
-
-    function selectTrack(flag) {
-        if (flag == 0 || flag == 1)
-            ++currIndex;
-        else
-            --currIndex;
-
-        if ((currIndex > -1) && (currIndex < songs.length)) {
-            if (flag == 0)
-                i.attr('class', 'fa fa-play');
-            else {
-                albumArt.removeClass('buffering');
-                i.attr('class', 'fa fa-pause');
-            }
-
-            seekBar.width(0);
-            trackTime.removeClass('active');
-            tProgress.text('00:00');
-            tTime.text('00:00');
-
-            currAlbum = songs[currIndex].name;
-            currTrackName = songs[currIndex].artist;
-            currArtwork = songs[currIndex].picture;
-
-            audio.src = songs[currIndex].url;
-
-            nTime = 0;
-            bTime = new Date();
-            bTime = bTime.getTime();
-
-            if (flag != 0) {
-                audio.play();
-                playerTrack.addClass('active');
-                albumArt.addClass('active');
-
-                clearInterval(buffInterval);
-                checkBuffering();
-            }
-
-            albumName.text(currAlbum);
-            trackName.text(currTrackName);
-            $('#album-art img').prop('src', bgArtworkUrl);
-        } else {
-            if (flag == 0 || flag == 1)
-                --currIndex;
-            else
-                ++currIndex;
-        }
-    }
-
-    function initPlayer() {
-        audio = new Audio();
-
-        selectTrack(0);
-
-        audio.loop = false;
-
-        playPauseButton.on('click', playPause);
-
-        sArea.mousemove(function (event) {
-            showHover(event);
-        });
-
-        sArea.mouseout(hideHover);
-
-        sArea.on('click', playFromClickedPos);
-
-        $(audio).on('timeupdate', updateCurrTime);
-
-        playPreviousTrackButton.on('click', function () {
-            selectTrack(-1);
-        });
-        playNextTrackButton.on('click', function () {
-            selectTrack(1);
-        });
-    }
-
-    initPlayer();
+    displayLanguage(language);
+    displayLineCard();
 });
+
+function initItemDOM() {
+    tabAboutMe = document.getElementById('tab-about-me')
+    tabEducation = document.getElementById('tab-education')
+    tabExperience = document.getElementById('tab-experience')
+    infoTable = document.getElementById('information-table')
+}
+
+function initEventListener() {
+    document.getElementById('vietnam-language').addEventListener('click', chooseLanguageVietnam, false)
+    document.getElementById('british-language').addEventListener('click', chooseLanguageEnglish, false)
+    document.getElementById('vietnam-language-background').addEventListener('click', chooseLanguageVietnam, false)
+    document.getElementById('british-language-background').addEventListener('click', chooseLanguageEnglish, false)
+    tabAboutMe.addEventListener('click', toggleTabAboutMe, false)
+    tabEducation.addEventListener('click', toggleTabEducation, false)
+    tabExperience.addEventListener('click', toggleTabExperience, false)
+}
+
+function displayLanguage(language) {
+    console.log(language)
+    switch (language) {
+        case 'vi': {
+            setTextVietnamese()
+            break;
+        }
+        case 'en': {
+            setTextEnglish()
+            break;
+        }
+        default:
+            break;
+    }
+}
