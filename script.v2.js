@@ -2,7 +2,8 @@ let tabAboutMe = null
 let tabEducation = null
 let tabExperience = null
 let infoTable = null
-
+let db = null
+let currentView = undefined
 function chooseLanguageVietnam() {
     window.sessionStorage.setItem('language', 'vi')
     closeLanguagePopup();
@@ -15,6 +16,10 @@ function chooseLanguageEnglish() {
     closeLanguagePopup();
     setTextEnglish();
     displayLineCard();
+}
+
+function contact() {
+    alert('cứt ỉa chảy 5 6 7')
 }
 
 function closeLanguagePopup() {
@@ -166,6 +171,10 @@ function offInfoTable() {
 document.addEventListener("DOMContentLoaded", function (event) {
     initItemDOM();
     initEventListener();
+    initFirebase()
+    setTimeout(() => {
+        increaseView()
+    }, 5000)
     let language = window.sessionStorage.getItem('language')
     if (!language) {
         document.getElementById('popup-background').style.display = "block"
@@ -174,6 +183,40 @@ document.addEventListener("DOMContentLoaded", function (event) {
     displayLanguage(language);
     displayLineCard();
 });
+
+function initFirebase() {
+    var config = {
+        apiKey: "AAAAIKxbihc:APA91bG1CgVUUgZYxJH21AyuiHd_zE4MZXlgMZXAFrBuBIZavLBARMzi1b_AwjqlagNTM_QRSHlBIumXJQXPwzrtw0yMmNY98RaEQBbuQX8WVBCUdSHuuuQV_7dgfT70WCILawvM4UC4",
+        authDomain: "porfolio-b45a2.firebaseapp.com",
+        // databaseURL: "https://porfolio-b45a2-default-rtdb.firebaseio.com/",
+        // storageBucket: "gs://porfolio-b45a2.appspot.com/",
+        projectId: 'porfolio-b45a2'
+    };
+    firebase.initializeApp(config);
+    let firestore = firebase.firestore();
+    db = firestore.collection("actions").doc("4bGJCR8MHouZYqHiRuOB")
+
+    //get views
+    db.get().then((doc) => {
+        currentView = doc.data().views
+        document.getElementById('views-number').innerText = currentView
+    })
+
+    //listen database change
+    db.onSnapshot((doc) => {
+            let source = doc.metadata.hasPendingWrites ? "Local" : "Server";
+            currentView = doc.data().views
+            document.getElementById('views-number').innerText = currentView
+        });
+}
+
+function increaseView() {
+    if(currentView) {
+        db.update({
+            views: currentView + 1
+        })
+    }
+}
 
 function initItemDOM() {
     tabAboutMe = document.getElementById('tab-about-me')
@@ -187,6 +230,7 @@ function initEventListener() {
     document.getElementById('british-language').addEventListener('click', chooseLanguageEnglish, false)
     document.getElementById('vietnam-language-background').addEventListener('click', chooseLanguageVietnam, false)
     document.getElementById('british-language-background').addEventListener('click', chooseLanguageEnglish, false)
+    document.getElementById('contact-block').addEventListener('click', contact, false)
     tabAboutMe.addEventListener('click', toggleTabAboutMe, false)
     tabEducation.addEventListener('click', toggleTabEducation, false)
     tabExperience.addEventListener('click', toggleTabExperience, false)
