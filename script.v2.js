@@ -20,7 +20,7 @@ function chooseLanguageEnglish() {
 function closeLanguagePopup() {
     document.getElementById('popup-language').style.transform = "scale(0)";
     setTimeout(() => {
-        document.getElementById('popup-background_v2').style.display = "none";
+        document.getElementById('popup-background').style.display = "none";
     }, 300)
 }
 
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     initEventListener();
     let language = window.sessionStorage.getItem('language')
     if (!language) {
-        document.getElementById('popup-background_v2').style.display = "block"
+        document.getElementById('popup-background').style.display = "block"
         return;
     }
     displayLanguage(language);
@@ -185,8 +185,8 @@ function initItemDOM() {
 function initEventListener() {
     document.getElementById('vietnam-language').addEventListener('click', chooseLanguageVietnam, false)
     document.getElementById('british-language').addEventListener('click', chooseLanguageEnglish, false)
-    document.getElementById('vietnam-language-background_v2').addEventListener('click', chooseLanguageVietnam, false)
-    document.getElementById('british-language-background_v2').addEventListener('click', chooseLanguageEnglish, false)
+    document.getElementById('vietnam-language-background').addEventListener('click', chooseLanguageVietnam, false)
+    document.getElementById('british-language-background').addEventListener('click', chooseLanguageEnglish, false)
     tabAboutMe.addEventListener('click', toggleTabAboutMe, false)
     tabEducation.addEventListener('click', toggleTabEducation, false)
     tabExperience.addEventListener('click', toggleTabExperience, false)
