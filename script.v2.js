@@ -8,14 +8,19 @@ function chooseLanguageVietnam() {
     window.sessionStorage.setItem('language', 'vi')
     closeLanguagePopup();
     setTextVietnamese();
-    displayLineCard();
+    displayContent()
 }
 
 function chooseLanguageEnglish() {
     window.sessionStorage.setItem('language', 'en')
     closeLanguagePopup();
     setTextEnglish();
-    displayLineCard();
+    displayContent()
+}
+
+function displayContent() {
+    displayLineCard()
+    displaySocialInfo()
 }
 
 function contact() {
@@ -96,6 +101,14 @@ function displayLineCard() {
     lineCard.style.display = "flex"
     setTimeout(() => {
         lineCard.style.transform = "scale(1)"
+    }, 300)
+}
+
+function displaySocialInfo() {
+    let socialInfo = document.getElementById('social-info')
+    socialInfo.style.display = "flex"
+    setTimeout(() => {
+        socialInfo.style.transform = "scale(1)"
     }, 300)
 }
 
@@ -182,6 +195,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     displayLanguage(language);
     displayLineCard();
+    displaySocialInfo();
 });
 
 function initFirebase() {
