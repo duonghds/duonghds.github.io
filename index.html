@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src='script.v2.js'></script>
     <link href="style.v2.css" rel="stylesheet"/>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png"/>
     <title>Dương Hoàng</title>
 </head>
 <body>
@@ -24,6 +24,31 @@
         <div class="national">
             <img id="vietnam-language" src="national/vietnam.png">
             <img id="british-language" src="national/british.png">
+        </div>
+    </div>
+</div>
+<div class="popup-wrapper" id="popup-wrapper" style="display: none">
+    <div class="popup-contact" id="popup-contact">
+        <div class="left-image"></div>
+        <div class="right-input">
+            <p class="label-contact" id="label-contact">Contact with me</p>
+            <div class="row-input">
+                <p class="label-row-input" id="email-contact">Email</p>
+                <input type="text" class="contact-input">
+            </div>
+
+            <div class="row-input">
+                <p class="label-row-input" id="name-contact">Name</p>
+                <input type="text" class="contact-input">
+            </div>
+
+            <div class="row-input" style="height: 40%">
+                <p class="label-row-input" id="message-contact">Message</p>
+                <textarea type="text" class="contact-input"></textarea>
+            </div>
+            <div class="row-input submit">
+                <p class="submit-contact" id="submit-contact-button">Submit</p>
+            </div>
         </div>
     </div>
 </div>
@@ -123,7 +148,7 @@
     </div>
     <div class="view-line"></div>
     <div class="right-block" id="contact-block">
-        Contact
+        <p id="contact-button">Contact</p>
         <img src="./social/handshake.png" alt="" width="30" height="30">
     </div>
 </div>

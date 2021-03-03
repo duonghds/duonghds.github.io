@@ -4,11 +4,20 @@ let tabExperience = null
 let infoTable = null
 let db = null
 let currentView = undefined
+const VIEW_TOKEN_TTL = 10800000
+
 function chooseLanguageVietnam() {
     window.sessionStorage.setItem('language', 'vi')
     closeLanguagePopup();
     setTextVietnamese();
     displayContent()
+}
+
+function closePopupContact() {
+    document.getElementById('popup-contact').style.transform = "scale(0)"
+    setTimeout(() => {
+        document.getElementById('popup-wrapper').style.display = "none"
+    }, 300)
 }
 
 function chooseLanguageEnglish() {
@@ -24,7 +33,11 @@ function displayContent() {
 }
 
 function contact() {
-    alert('cứt ỉa chảy 5 6 7')
+    document.getElementById('popup-wrapper').style.display = "block"
+
+    setTimeout(() => {
+        document.getElementById('popup-contact').style.transform = "scale(1)"
+    }, 10)
 }
 
 function closeLanguagePopup() {
@@ -52,7 +65,13 @@ function setTextEnglish() {
         'GRADUATED',
         'COMPANY',
         'PRODUCT',
-        'YEARS EXP'
+        'YEARS EXP',
+        'Contact',
+        'Contact with me',
+        'Email',
+        'Name',
+        'Message',
+        'SUBMIT'
     ]
     setText(textArray)
 }
@@ -70,7 +89,13 @@ function setTextVietnamese() {
         'TỐT NGHIỆP',
         'CÔNG TY',
         'SẢN PHẨM',
-        'NĂM KN'
+        'NĂM KN',
+        'Liên hệ',
+        'Liên hệ với tôi',
+        'Email',
+        'Tên',
+        'Lời nhắn',
+        'GỬI'
 
     ]
     setText(textArray)
@@ -94,6 +119,12 @@ function setText(textArray) {
     document.getElementById('company').innerText = textArray[12]
     document.getElementById('product').innerText = textArray[13]
     document.getElementById('experience-doing').innerText = textArray[14]
+    document.getElementById('contact-button').innerText = textArray[15]
+    document.getElementById('label-contact').innerText = textArray[16]
+    document.getElementById('email-contact').innerText = textArray[17]
+    document.getElementById('name-contact').innerText = textArray[18]
+    document.getElementById('message-contact').innerText = textArray[19]
+    document.getElementById('submit-contact-button').innerText = textArray[20]
 }
 
 function displayLineCard() {
@@ -121,57 +152,48 @@ function getOffset(el) {
 }
 
 function toggleTabAboutMe() {
-    if (tabAboutMe.classList.contains('active')) {
-        tabAboutMe.style.transform = 'translateX(0px)'
-        tabAboutMe.classList.remove('active')
-        offInfoTable()
-    } else {
-        displayInfoTable();
-        tabAboutMe.style.transform = 'translateX(-200px)'
-        tabEducation.style.transform = 'translateX(0px)'
-        tabExperience.style.transform = 'translateX(0px)'
-        tabAboutMe.classList.add('active')
-    }
+    toggleTab(tabAboutMe, tabEducation, tabExperience)
 }
 
 function toggleTabEducation() {
-    if (tabEducation.classList.contains('active')) {
-        tabEducation.style.transform = 'translateX(0px)'
-        tabAboutMe.style.transform = 'translateX(0px)'
-        tabEducation.classList.remove('active')
-        offInfoTable()
-    } else {
-        displayInfoTable();
-        tabEducation.style.transform = 'translateX(-495px)'
-        tabExperience.style.transform = 'translateX(0px)'
-        tabAboutMe.style.transform = 'translateX(400px)'
-        tabEducation.classList.add('active')
-    }
+    toggleTab(tabEducation, tabAboutMe, tabExperience)
 }
 
 function toggleTabExperience() {
-    if (tabExperience.classList.contains('active')) {
-        tabExperience.style.transform = 'translateX(0px)'
-        tabAboutMe.style.transform = 'translateX(0px)'
-        tabExperience.classList.remove('active')
+    toggleTab(tabExperience, tabEducation, tabAboutMe)
+}
+
+function toggleTab(tabActive, tabNone1, tabNone2) {
+    if (tabActive.classList.contains('active')) {
+        tabActive.style.transform = 'scale(1) translateX(0px)'
+        tabActive.classList.remove('active')
         offInfoTable()
     } else {
+        let offset = getOffset(tabActive);
+        let translateX = offset.left - 50
+        tabActive.style.transform = `scale(1) translateX(-${translateX}px) `
+        tabNone1.style.transform = 'translateX(0px)'
+        tabNone2.style.transform = 'translateX(0px)'
+        tabActive.classList.add('active')
         displayInfoTable();
-        tabExperience.style.transform = 'translateX(-790px)'
-        tabAboutMe.style.transform = 'translateX(700px)'
-        tabEducation.style.transform = 'translateX(0px)'
-        tabExperience.classList.add('active')
     }
 }
 
 function displayInfoTable() {
-    let translateX = getOffset(tabAboutMe).left + 500 + tabAboutMe.offsetWidth / 2;
-    let translateY = getOffset(tabAboutMe).top / 2;
-    console.log(translateY)
-    infoTable.style.display = "flex";
-    setTimeout(() => {
-        infoTable.style.transform = `scale(1) translateX(${translateX}px) translateY(${translateY}px)`;
-    }, 0)
+    if (window.screen.width <= 768) {
+        infoTable.style.display = "flex"
+        setTimeout(() => {
+            infoTable.style.transform = `scale(1)`;
+        }, 0)
+    } else {
+        let translateX = getOffset(tabAboutMe).left + 500 + tabAboutMe.offsetWidth / 2;
+        let translateY = getOffset(tabAboutMe).top / 2;
+        infoTable.style.display = "flex";
+        setTimeout(() => {
+            infoTable.style.transform = `scale(1) translateX(${translateX}px) translateY(${translateY}px)`;
+        }, 0)
+    }
+
 }
 
 function offInfoTable() {
@@ -202,8 +224,6 @@ function initFirebase() {
     var config = {
         apiKey: "AAAAIKxbihc:APA91bG1CgVUUgZYxJH21AyuiHd_zE4MZXlgMZXAFrBuBIZavLBARMzi1b_AwjqlagNTM_QRSHlBIumXJQXPwzrtw0yMmNY98RaEQBbuQX8WVBCUdSHuuuQV_7dgfT70WCILawvM4UC4",
         authDomain: "porfolio-b45a2.firebaseapp.com",
-        // databaseURL: "https://porfolio-b45a2-default-rtdb.firebaseio.com/",
-        // storageBucket: "gs://porfolio-b45a2.appspot.com/",
         projectId: 'porfolio-b45a2'
     };
     firebase.initializeApp(config);
@@ -218,16 +238,22 @@ function initFirebase() {
 
     //listen database change
     db.onSnapshot((doc) => {
-            let source = doc.metadata.hasPendingWrites ? "Local" : "Server";
-            currentView = doc.data().views
-            document.getElementById('views-number').innerText = currentView
-        });
+        let source = doc.metadata.hasPendingWrites ? "Local" : "Server";
+        currentView = doc.data().views
+        document.getElementById('views-number').innerText = currentView
+    });
 }
 
 function increaseView() {
-    if(currentView) {
+    let expiredToKenView = window.localStorage.getItem('expired_token_view')
+    if (expiredToKenView && (new Date().getTime() - Number.parseInt(expiredToKenView)) < VIEW_TOKEN_TTL) {
+        return;
+    }
+    if (currentView) {
         db.update({
             views: currentView + 1
+        }).then(() => {
+            window.localStorage.setItem('expired_token_view', new Date().getTime().toString())
         })
     }
 }
@@ -239,19 +265,23 @@ function initItemDOM() {
     infoTable = document.getElementById('information-table')
 }
 
+
 function initEventListener() {
     document.getElementById('vietnam-language').addEventListener('click', chooseLanguageVietnam, false)
     document.getElementById('british-language').addEventListener('click', chooseLanguageEnglish, false)
     document.getElementById('vietnam-language-background').addEventListener('click', chooseLanguageVietnam, false)
     document.getElementById('british-language-background').addEventListener('click', chooseLanguageEnglish, false)
     document.getElementById('contact-block').addEventListener('click', contact, false)
+    document.getElementById('popup-wrapper').addEventListener('click', closePopupContact, false)
+    document.getElementById('popup-contact').addEventListener('click', (e) => {
+        e.stopPropagation()
+    }, false)
     tabAboutMe.addEventListener('click', toggleTabAboutMe, false)
     tabEducation.addEventListener('click', toggleTabEducation, false)
     tabExperience.addEventListener('click', toggleTabExperience, false)
 }
 
 function displayLanguage(language) {
-    console.log(language)
     switch (language) {
         case 'vi': {
             setTextVietnamese()

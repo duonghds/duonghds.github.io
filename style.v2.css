@@ -5,6 +5,8 @@ body {
     top: 0;
 }
 
+
+
 .language-background {
     position: absolute;
     z-index: 2;
@@ -43,6 +45,98 @@ body {
     top: 0px;
     left: 0px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto
+}
+
+.popup-contact {
+    width: 40%;
+    height: 50%;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease-in-out;
+    transform: scale(0);
+    display: flex;
+    position: relative;
+    margin: 150px auto 0px;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.popup-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0px;
+    left: 0px;
+}
+
+.popup-contact .left-image {
+    width: 30%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+
+.popup-contact .right-input {
+    width: 70%;
+    height: 100%;
+    overflow: hidden;
+    padding-left: 50px;
+}
+
+.popup-contact .right-input .label-contact {
+    font-weight: bold;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.right-input .contact-input {
+    width: 65%;
+    height: 100%;
+    float: right;
+    margin: auto 20px auto auto;
+    padding-left: 10px;
+    font-family: sans-serif;
+}
+
+.submit-contact {
+    border-radius: 10px;
+    background-color: #f2b4c0;
+    padding: 10px 10px 10px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    color: white;
+    width: 70%;
+    text-align: center;
+}
+
+.submit {
+    margin: auto 20px auto auto;
+    padding-left: 10px;
+    font-family: sans-serif;
+    float: right;
+    width: 70%;
+}
+
+.row-input {
+    display: flex;
+    height: 7%;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px auto 0;
+}
+
+.row-input p {
+    margin-right: 10px;
+    float: left;
 }
 
 .choose-language-popup {
@@ -127,6 +221,8 @@ body {
     border-radius: 10px;
     background-color: #f2b4c0;
 }
+
+
 
 .social-info .left-block {
     font-size: 20px;
@@ -217,6 +313,17 @@ body {
 
 }
 
+@media only screen and (max-width: 1024px) {
+    .card-content .tabs-text {
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0;
+        padding-top: 0px;
+
+    }
+}
+
 .card-content .description {
     text-align: center;
     font-size: 15px;
@@ -227,8 +334,32 @@ body {
     padding-right: 10px;
 }
 
+@media only screen and (max-width: 1024px) {
+    .card-content .description {
+        text-align: center;
+        font-size: 13px;
+        margin: 0;
+        padding-top: 15px;
+        color: gray;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .card-content .description {
+        text-align: center;
+        font-size: 13px;
+        margin: 0;
+        padding-top: 10px;
+        color: gray;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
 .card-footer {
-    height: 15%;
+    height: 20%;
     display: flex;
 }
 
@@ -253,6 +384,7 @@ body {
     justify-content: center;
     color: white;
     padding-top: 0;
+    margin-top: -10px;
     font-family: inherit;
 }
 
@@ -265,4 +397,109 @@ body {
 .card-footer .block .text {
     font-size: 13px;
     margin: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+    .card-footer .block .text {
+        font-size: 8px;
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .social-info {
+        width: 50%;
+        height: 8%;
+        z-index: 1;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: 0 auto 0;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+        transform: scale(0);
+        border-radius: 10px;
+        background-color: #f2b4c0;
+    }
+
+    .line-card {
+        height: 75%;
+        padding-top: 40px;
+        display: block;
+
+    }
+
+    .line-card .card {
+        width: 90%;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        position: absolute;
+        height: 90%;
+    }
+
+    .line-card .card:hover {
+        transition: none;
+        transform: scale(1);
+    }
+
+    .information-table {
+        width: 98%;
+        left: 1%;
+        height: 95%;
+        top: 2.5%;
+        margin: 0 0 0 0;
+    }
+
+    .popup-contact {
+        width: 98%;
+    }
+
+    .popup-contact .left-image {
+        width: 0%;
+    }
+
+    .popup-contact .right-input {
+        width: 100%;
+    }
+
+    .popup-contact .label-contact {
+        text-align: center;
+    }
+
+    .card-content .tabs-text {
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        margin: 0;
+        padding-top: 10px;
+
+    }
+
+    .card-content .milestone {
+        text-align: center;
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .card-content .description {
+        text-align: center;
+        font-size: 18px;
+        margin: 0;
+        padding-top: 25px;
+        color: gray;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .card-footer .block .number {
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .card-footer .block .text {
+        font-size: 15px;
+        margin: 0;
+    }
 }
