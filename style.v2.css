@@ -65,6 +65,7 @@ body {
     margin: 150px auto 0px;
     justify-content: center;
     flex-direction: row;
+    overflow: hidden;
 }
 
 .popup-wrapper {
@@ -75,18 +76,33 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     top: 0px;
     left: 0px;
+    overflow: hidden;
+}
+
+.popup-wrapper .shipping {
+    position: absolute;
+    width: 20%;
+    height: auto;
+    top: 30%;
+    margin-left: -500px;
+    transition: all 0.3s ease-in-out;
+    z-index: 4;
 }
 
 .popup-contact .left-image {
-    width: 30%;
+    width: 35%;
     height: 100%;
     overflow: hidden;
 }
 
+.popup-contact .left-image img {
+    width: 100%;
+    height: 100%;
+}
 
 
 .popup-contact .right-input {
-    width: 70%;
+    width: 65%;
     height: 100%;
     overflow: hidden;
     padding-left: 50px;
@@ -408,7 +424,7 @@ body {
 
 @media only screen and (max-width: 768px) {
     .social-info {
-        width: 50%;
+        width: 70%;
         height: 8%;
         z-index: 1;
         position: relative;

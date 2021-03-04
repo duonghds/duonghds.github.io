@@ -3,6 +3,7 @@ let tabEducation = null
 let tabExperience = null
 let infoTable = null
 let db = null
+let contactDB = null
 let currentView = undefined
 const VIEW_TOKEN_TTL = 10800000
 
@@ -99,6 +100,28 @@ function setTextVietnamese() {
 
     ]
     setText(textArray)
+}
+
+function submitContact() {
+    document.getElementById('popup-contact').style.transform = 'scale(0)'
+    document.getElementById('shipping-car').style.transform = 'scale(1) translateX(2000px)'
+    setTimeout(() => {
+        document.getElementById('popup-wrapper').style.display = 'none'
+        document.getElementById('shipping-car').style.transform = 'scale(1) translateX(0px)'
+    }, 300)
+    let emailItem = document.getElementById('email-contact-input')
+    let nameItem = document.getElementById('name-contact-input')
+    let messageItem = document.getElementById('message-contact-input')
+    let email = emailItem.value
+    let name = nameItem.value.trim().replace(' ', '')
+    let message = messageItem.value
+    contactDB.set({
+        [name]: JSON.stringify({email, name, message})
+    }, {merge: true})
+    emailItem.value = ""
+    nameItem.value = ""
+    messageItem.value = ""
+    console.log(email, name, message)
 }
 
 function setText(textArray) {
@@ -229,6 +252,7 @@ function initFirebase() {
     firebase.initializeApp(config);
     let firestore = firebase.firestore();
     db = firestore.collection("actions").doc("4bGJCR8MHouZYqHiRuOB")
+    contactDB = firestore.collection("actions").doc("csDYQxrCeMCLlCyfCFmF")
 
     //get views
     db.get().then((doc) => {
@@ -276,6 +300,7 @@ function initEventListener() {
     document.getElementById('popup-contact').addEventListener('click', (e) => {
         e.stopPropagation()
     }, false)
+    document.getElementById('submit-contact-button').addEventListener('click', submitContact, false)
     tabAboutMe.addEventListener('click', toggleTabAboutMe, false)
     tabEducation.addEventListener('click', toggleTabEducation, false)
     tabExperience.addEventListener('click', toggleTabExperience, false)
