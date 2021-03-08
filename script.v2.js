@@ -6,6 +6,7 @@ let db = null
 let contactDB = null
 let currentView = undefined
 const VIEW_TOKEN_TTL = 10800000
+let tabIndex = 1
 
 function chooseLanguageVietnam() {
     window.sessionStorage.setItem('language', 'vi')
@@ -72,7 +73,14 @@ function setTextEnglish() {
         'Email',
         'Name',
         'Message',
-        'SUBMIT'
+        'SUBMIT',
+        "Hoang Dinh Son Duong is my name. You don't know how to start a conversation with me? Just ask me to play some game with you, or go to play football, it easy way to our to be friend.",
+        "HOBBIES",
+        "INFORMATION",
+        "Phone Number:(+84) 332165795",
+        "Birthday: 24/11/1997",
+        "Live in: 45 Phung Hung, An Thoi 2, Phu Quoc, Kien Giang",
+        "Tap for more",
     ]
     setText(textArray)
 }
@@ -96,7 +104,14 @@ function setTextVietnamese() {
         'Email',
         'Tên',
         'Lời nhắn',
-        'GỬI'
+        'GỬI',
+        "Tên tui là Hoàng Đình Sơn Dương. Nếu ông/bà k biết bắt chuyện với tui như nào thì thôi cứ rủ tui chơi game hay đá bóng đi, như vậy nhanh thành bạn hơn đó.",
+        "SỞ THÍCH",
+        "THÔNG TIN",
+        "Điện thoại:(+84) 332165795",
+        "Ngày sinh: 24/11/1997",
+        "Địa chỉ: 45 Phùng Hưng, An Thới 2, Phú Quốc, Kiên Giang",
+        "Xem thêm",
 
     ]
     setText(textArray)
@@ -115,13 +130,15 @@ function submitContact() {
     let email = emailItem.value
     let name = nameItem.value.trim().replace(' ', '')
     let message = messageItem.value
+    if(!email || !name || !message) {
+        alert('Please fill full info')
+    }
     contactDB.set({
         [name]: JSON.stringify({email, name, message})
     }, {merge: true})
     emailItem.value = ""
     nameItem.value = ""
     messageItem.value = ""
-    console.log(email, name, message)
 }
 
 function setText(textArray) {
@@ -148,6 +165,85 @@ function setText(textArray) {
     document.getElementById('name-contact').innerText = textArray[18]
     document.getElementById('message-contact').innerText = textArray[19]
     document.getElementById('submit-contact-button').innerText = textArray[20]
+    document.getElementById('header-information').innerText = textArray[21]
+    document.getElementById('hobbies-label').innerText = textArray[22]
+    document.getElementById('information-label').innerText = textArray[23]
+    document.getElementById('phone-number-info').innerText = textArray[24]
+    document.getElementById('birthday-info').innerText = textArray[25]
+    document.getElementById('address-info').innerText = textArray[26]
+    document.getElementById('next-btn').innerText = textArray[27]
+}
+
+function nextTab() {
+    tabIndex++;
+    if(tabIndex >= 4) {
+        tabIndex = 1;
+    }
+    handleNextTabByIndex(tabIndex)
+}
+
+function handleNextTabByIndex(tabIndex) {
+    let directBtn = document.getElementById('direct-button')
+    switch (tabIndex) {
+        case 1: {
+            tabAboutMe.style.transform = 'rotate(10deg) translateX(800px) translateY(-500px)';
+            setTimeout(() => {
+                tabAboutMe.style.zIndex = 3;
+                directBtn.style.backgroundColor = '#d4635e';
+                tabAboutMe.style.transform = 'none'
+                tabEducation.style.zIndex = 'unset';
+                tabExperience.style.zIndex = 2;
+            }, 300)
+
+            break;
+        }
+
+        case 2: {
+            tabEducation.style.transform = 'rotate(10deg) translateX(800px) translateY(-500px)';
+            setTimeout(() => {
+                tabEducation.style.zIndex = 3;
+                directBtn.style.backgroundColor = '#d2d740'
+                tabEducation.style.transform = 'none';
+                tabAboutMe.style.zIndex = 2;
+                tabExperience.style.zIndex = 'unset';
+            }, 300)
+            break;
+        }
+
+        case 3: {
+            tabExperience.style.transform = 'rotate(10deg) translateX(800px) translateY(-500px)';
+            setTimeout(() => {
+                tabExperience.style.zIndex = 3;
+                directBtn.style.backgroundColor = '#3485a3';
+                tabExperience.style.transform = 'none';
+                tabEducation.style.zIndex = 2;
+                tabAboutMe.style.zIndex = 'unset';
+            }, 300)
+
+            break;
+        }
+    }
+}
+
+function closeInformationTable() {
+    let informationTable = document.getElementById('information-table')
+    informationTable.style.transform = 'scale(0) translate(0px, 0px)';
+    setTimeout(() => {
+        informationTable.style.display = 'none'
+    }, 300)
+    let cards = document.querySelectorAll('.card')
+    cards.forEach((card) => {
+        card.classList.remove('active')
+    })
+
+    hideAllInfomationWrapper()
+}
+
+function hideAllInfomationWrapper() {
+    let informationWrapper = document.querySelectorAll('.information-table-wrapper')
+    informationWrapper.forEach((inf) => {
+        inf.style.display = 'none'
+    })
 }
 
 function displayLineCard() {
@@ -176,14 +272,20 @@ function getOffset(el) {
 
 function toggleTabAboutMe() {
     toggleTab(tabAboutMe, tabEducation, tabExperience)
+    hideAllInfomationWrapper()
+    document.getElementById('about-me-information-table').style.display = 'block'
 }
 
 function toggleTabEducation() {
     toggleTab(tabEducation, tabAboutMe, tabExperience)
+    hideAllInfomationWrapper()
+    document.getElementById('about-me-information-table').style.display = 'block'
 }
 
 function toggleTabExperience() {
     toggleTab(tabExperience, tabEducation, tabAboutMe)
+    hideAllInfomationWrapper()
+    document.getElementById('about-me-information-table').style.display = 'block'
 }
 
 function toggleTab(tabActive, tabNone1, tabNone2) {
@@ -225,23 +327,6 @@ function offInfoTable() {
         infoTable.style.display = "none"
     }, 300)
 }
-
-document.addEventListener("DOMContentLoaded", function (event) {
-    initItemDOM();
-    initEventListener();
-    initFirebase()
-    setTimeout(() => {
-        increaseView()
-    }, 5000)
-    let language = window.sessionStorage.getItem('language')
-    if (!language) {
-        document.getElementById('popup-background').style.display = "block"
-        return;
-    }
-    displayLanguage(language);
-    displayLineCard();
-    displaySocialInfo();
-});
 
 function initFirebase() {
     var config = {
@@ -301,6 +386,8 @@ function initEventListener() {
         e.stopPropagation()
     }, false)
     document.getElementById('submit-contact-button').addEventListener('click', submitContact, false)
+    document.getElementById('direct-button').addEventListener('click', nextTab, false)
+    document.getElementById('cancel-btn').addEventListener('click', closeInformationTable, false)
     tabAboutMe.addEventListener('click', toggleTabAboutMe, false)
     tabEducation.addEventListener('click', toggleTabEducation, false)
     tabExperience.addEventListener('click', toggleTabExperience, false)
@@ -320,3 +407,20 @@ function displayLanguage(language) {
             break;
     }
 }
+
+document.addEventListener("DOMContentLoaded", function (event) {
+    initItemDOM();
+    initEventListener();
+    initFirebase()
+    setTimeout(() => {
+        increaseView()
+    }, 5000)
+    let language = window.sessionStorage.getItem('language')
+    if (!language) {
+        document.getElementById('popup-background').style.display = "block"
+        return;
+    }
+    displayLanguage(language);
+    displayLineCard();
+    displaySocialInfo();
+});

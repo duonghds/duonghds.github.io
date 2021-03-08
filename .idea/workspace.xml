@@ -20,8 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="607f8a60-f797-498b-93ff-e6462a4b51a5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/background_v2/doggo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/social/shipping.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social/address.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social/birthday.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social/cancel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social/email.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social/facebook_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social/football.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social/game-controller.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social/linkedin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social/telephone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/social/writing.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.v2.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.v2.js" afterDir="false" />
@@ -83,7 +91,10 @@
       <workItem from="1613532234785" duration="602000" />
       <workItem from="1614328133272" duration="808000" />
       <workItem from="1614567788412" duration="331000" />
-      <workItem from="1614569689606" duration="47679000" />
+      <workItem from="1614569689606" duration="52396000" />
+      <workItem from="1614926356400" duration="530000" />
+      <workItem from="1615020548272" duration="2516000" />
+      <workItem from="1615173756942" duration="8414000" />
     </task>
     <servers />
   </component>

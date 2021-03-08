@@ -11,9 +11,8 @@
     <title>Dương Hoàng</title>
 </head>
 <body>
-<div class="background">
 
-</div>
+<div class="background"></div>
 <div class="language-background">
     <img id="vietnam-language-background" src="national/vietnam.png">
     <img id="british-language-background" src="national/british.png">
@@ -39,12 +38,10 @@
                 <p class="label-row-input" id="email-contact">Email</p>
                 <input type="text" class="contact-input" id="email-contact-input">
             </div>
-
             <div class="row-input">
                 <p class="label-row-input" id="name-contact">Name</p>
                 <input type="text" class="contact-input" id="name-contact-input">
             </div>
-
             <div class="row-input" style="height: 40%">
                 <p class="label-row-input" id="message-contact">Msg</p>
                 <textarea type="text" class="contact-input" id="message-contact-input"></textarea>
@@ -55,7 +52,60 @@
         </div>
     </div>
 </div>
-<div class="information-table" id="information-table" style="display: none"></div>
+<div class="information-table" id="information-table" style="display: flex">
+    <div class="cancel-btn" id="cancel-btn">
+        <img src="./social/cancel.png" alt="">
+    </div>
+    <div id="about-me-information-table" style="display: none" class="information-table-wrapper">
+        <div class="header-information" id="header-information">
+        </div>
+        <div class="content-information" id="content-information">
+            <div class="left-block">
+                <div class="row" id="hobbies-label">HOBBIES</div>
+                <div class="row">
+                    <img src="./social/football.png" alt="">
+                </div>
+                <div class="row">
+                    <img src="./social/game-controller.png" alt="">
+                </div>
+                <div class="row">
+                    <img src="./social/writing.png" alt="">
+                </div>
+            </div>
+            <div class="right-block">
+                <div class="row header" id="information-label">INFORMATION</div>
+                <div class="row">
+                    <img src="./social/telephone.png" alt="">
+                    <a id="phone-number-info" href="tel: 0332165795">Phone number:(+84) 332165795</a>
+
+                </div>
+                <div class="row">
+                    <img src="./social/birthday.png" alt="">
+                    <a id="birthday-info" href="https://www.facebook.com/hdsduong24">Birthday: 24/11/1997</a>
+
+                </div>
+                <div class="row">
+                    <img src="./social/email.png" alt="">
+                    <a id="email-info" href="mailto:duonghoang2411@gmail.com">Email: duonghoang2411@gmail.com</a>
+                </div>
+                <div class="row">
+                    <img src="./social/address.png" alt="">
+                    <a href="https://goo.gl/maps/BNV6o7hYNG1rohRe7" id="address-info">
+                        Live in: 45 Phung Hung, An Thoi 2, Phu Quoc, Kien Giang
+                    </a>
+                </div>
+                <div class="row">
+                    <img src="./social/facebook_2.png" alt="">
+                    <a href="https://www.facebook.com/hdsduong24/">Facebook: Hoàng Đình Sơn Dương</a>
+                </div>
+                <div class="row">
+                    <img src="./social/linkedin.png" alt="">
+                    <a href="https://www.linkedin.com/in/d%C6%B0%C6%A1ng-ho%C3%A0ng-26952a1b1/">Linkedin: Dương Hoàng</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="line-card" class="line-card" style="display: none">
     <div class="card" id="tab-about-me">
         <div class="card-header-wallpaper">
@@ -142,6 +192,11 @@
                 <p class="text" id="experience-doing">EXPERIENCE</p>
             </div>
         </div>
+    </div>
+</div>
+<div class="direct-button" id="direct-button">
+    <div class="right-block" style="width: 100%">
+        <p id="next-btn">Tap for more</p>
     </div>
 </div>
 <div class="social-info" id="social-info" style="display: none">
