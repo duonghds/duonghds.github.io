@@ -235,6 +235,7 @@ function closeInformationTable() {
     let cards = document.querySelectorAll('.card')
     cards.forEach((card) => {
         card.classList.remove('active')
+        card.style.transform = 'scale(1) translateX(0px)'
     })
 
     hideAllInfomationWrapper()

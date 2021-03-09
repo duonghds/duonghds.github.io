@@ -9,6 +9,13 @@ div {
     -webkit-tap-highlight-color: transparent;
 }
 
+div {
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
 .language-background {
     position: absolute;
     z-index: 2;
