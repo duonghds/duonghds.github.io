@@ -32,6 +32,7 @@ function chooseLanguageEnglish() {
 function displayContent() {
     displayLineCard()
     displaySocialInfo()
+    displayDirection()
 }
 
 function contact() {
@@ -254,6 +255,14 @@ function displayLineCard() {
     }, 300)
 }
 
+function displayDirection() {
+    let direction = document.getElementById('direct-button')
+    direction.style.display = 'flex'
+    setTimeout(() => {
+        direction.style.transform = "scale(1)"
+    }, 300)
+}
+
 function displaySocialInfo() {
     let socialInfo = document.getElementById('social-info')
     socialInfo.style.display = "flex"
@@ -412,6 +421,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     initItemDOM();
     initEventListener();
     initFirebase()
+
     setTimeout(() => {
         increaseView()
     }, 5000)
@@ -423,4 +433,5 @@ document.addEventListener("DOMContentLoaded", function (event) {
     displayLanguage(language);
     displayLineCard();
     displaySocialInfo();
+    displayDirection()
 });
