@@ -666,7 +666,11 @@ div {
     .full-block .container {
         width: 100%;
         padding-left: 70px;
-        padding-right: 25px;
+        padding-right: 0;
+    }
+    .full-block .content h2 {
+        margin-top: 5px;
+        margin-bottom: -5px;
     }
 
     /* Make sure that all arrows are pointing leftwards */
@@ -674,7 +678,7 @@ div {
         left: 60px;
         border: medium solid #FF9F55;
         border-width: 10px 10px 10px 0;
-        border-color: transparent white transparent transparent;
+        border-color: transparent #FF9F55 transparent transparent;
     }
 
     /* Make sure all circles are at the same spot */
