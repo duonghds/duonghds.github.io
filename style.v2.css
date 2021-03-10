@@ -257,7 +257,8 @@ div {
 }
 
 .information-table-wrapper .download {
-    font-family: fantasy;
+    margin-top: 20px;
+    font-family: inherit;
 }
 
 .information-table-wrapper .download-img {

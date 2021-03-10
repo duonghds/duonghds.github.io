@@ -87,6 +87,8 @@ function setTextEnglish() {
         "In first day of high school i wanna be a writer, i'm writing so much, but in the university entrance exam, the software engineer is my selected for future",
         "2015-2018 - University of Science",
         "I throught university life is just learn and learn more(i saw in film), but beside that i also learn so much another such as: about people, about friend, about family, about life",
+        "Download for view detail my working experience",
+        "DOWNLOAD RESUME"
     ]
     setText(textArray)
 }
@@ -94,9 +96,9 @@ function setTextEnglish() {
 function setTextVietnamese() {
     let textArray = [
         'BẢN THÂN', 'HỌC VẤN', 'KINH NGHIỆM',
-        "Ngoại trừ đẹp trai, nhà giàu, học giỏi là những thứ tui chưa có ra thì tui cũng còn rất nhiều thứ khác chưa tốt. Nhấn vào thẻ này để tìm hiểu thêm dề tui và tui cũng muốn bạn trở thành một phần trong hành trình cuộc sống.",
-        "Là sinh viên khoa Công nghệ thông tin trường Đại học Khoa học Tự nhiên - Đại học quốc gia TP.HCM. Tui biết cài win nhưng không biết sửa đồ điện gia dụng",
-        "Hồi nhỏ tui ghiền chơi điện tử lắm, nhưng mà bị má chửi hoài nên mong muốn được vào công ty game để được chơi game một cách hợp pháp. Hiện tại tui đang là dev tại công ty VNG",
+        "Ngoại trừ đẹp trai, nhà giàu, học giỏi là những thứ mình chưa có ra thì mình cũng còn rất nhiều thứ khác chưa tốt. Nhấn vào thẻ này để tìm hiểu thêm dề mình và mình cũng muốn bạn trở thành một phần trong hành trình cuộc sống.",
+        "Là sinh viên khoa Công nghệ thông tin trường Đại học Khoa học Tự nhiên - Đại học quốc gia TP.HCM. mình biết cài win nhưng không biết sửa đồ điện gia dụng",
+        "Hồi nhỏ mình ghiền chơi điện tử lắm, nhưng mà bị má chửi hoài nên mong muốn được vào công ty game để được chơi game một cách hợp pháp. Hiện tại mình đang là dev tại công ty VNG",
         getYearsOld().toString(),
         'TUỔI',
         'CAO(cm)',
@@ -111,18 +113,20 @@ function setTextVietnamese() {
         'Tên',
         'Lời nhắn',
         'GỬI',
-        "Tên tui là Hoàng Đình Sơn Dương. Nếu bạn k biết bắt chuyện với tui như nào thì thôi cứ rủ tui chơi game hay đá bóng đi, như vậy nhanh thành bạn hơn đó.",
+        "Tên mình là Hoàng Đình Sơn Dương. Nếu bạn k biết bắt chuyện với mình như nào thì thôi cứ rủ mình chơi game hay đá bóng đi, như vậy nhanh thành bạn hơn đó.",
         "SỞ THÍCH",
         "THÔNG TIN",
         "Điện thoại:(+84) 332165795",
         "Ngày sinh: 24/11/1997",
         "Địa chỉ: 45 Phùng Hưng, An Thới 2, Phú Quốc, Kiên Giang",
         "Xem thêm",
-        "Thời học sinh của tui khá lạ. Trong 9 năm đầu, tui chưa từng hứng thú gì về kiến thức hay công việc sau này cả, cứ nghĩ rồi sẽ đi biển thôi. May mắn là những năm sau tui đã nhận ra được ngoài kia còn nhiều điều thú vị hơn nhiều",
+        "Thời học sinh của mình khá lạ. Trong 9 năm đầu, mình chưa từng hứng thú gì về kiến thức hay công việc sau này cả, cứ nghĩ rồi sẽ đi biển thôi. May mắn là những năm sau mình đã nhận ra được ngoài kia còn nhiều điều thú vị hơn nhiều",
         "2012-2015 - THPT An Thới",
-        "Năm lớp 10 của cấp 3, tui luôn nghĩ mình sẽ thành nhà văn nên bản thân đã viết khá nhiều, nhưng tới đợt thi đại học thì tui nhận ra trở thành một kỹ sư lập trình mới là con đường đúng của mình",
+        "Năm lớp 10 của cấp 3, mình luôn nghĩ mình sẽ thành nhà văn nên bản thân đã viết khá nhiều, nhưng tới đợt thi đại học thì mình nhận ra trở thành một kỹ sư lập trình mới là con đường đúng của mình",
         "2015-2018 - Đại học Khoa học Tự nhiên",
-        "Hồi đó tui nghĩ là lên đại học là chỉ có học và học(coi phim thấy vậy), rồi lên đại học nhận ra là ngoài những kiến thức chuyên ngành thì đại học còn dạy mình rất nhiều thứ như: về con ngừoi, bạn bè, gia đình hay là cuộc sống",
+        "Hồi đó mình nghĩ là lên đại học là chỉ có học và học(coi phim thấy vậy), rồi lên đại học nhận ra là ngoài những kiến thức chuyên ngành thì đại học còn dạy mình rất nhiều thứ như: về con ngừoi, bạn bè, gia đình hay là cuộc sống",
+        "Tải về để xem chi tiết quá trình làm việc của mình nhé",
+        "TẢI RESUME"
     ]
     setText(textArray)
 }
@@ -187,6 +191,8 @@ function setText(textArray) {
     document.getElementById('high-school-desc').innerText = textArray[30]
     document.getElementById('university-event').innerText = textArray[31]
     document.getElementById('university-desc').innerText = textArray[32]
+    document.getElementById('download-desc').innerText = textArray[33]
+    document.getElementById('download-label').innerText = textArray[34]
 }
 
 function nextTab() {
