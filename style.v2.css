@@ -223,7 +223,6 @@ div {
     text-align: center;
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 20px;
 }
 
 .information-table .header-information {
@@ -261,7 +260,7 @@ div {
     font-family: fantasy;
 }
 
-.information-table-wrapper img {
+.information-table-wrapper .download-img {
     width: 10%;
     height: auto;
     margin-top: 25%;
@@ -846,7 +845,7 @@ div {
         padding: 0 10%;
     }
 
-    .information-table-wrapper img {
+    .information-table-wrapper .download-img {
         width: 30%;
         height: auto;
         margin-top: 50%;
