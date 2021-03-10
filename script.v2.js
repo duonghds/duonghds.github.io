@@ -82,6 +82,11 @@ function setTextEnglish() {
         "Birthday: 24/11/1997",
         "Live in: 45 Phung Hung, An Thoi 2, Phu Quoc, Kien Giang",
         "Tap for more",
+        "My student life is so weired. In 9 years of school, i'm a stupid student and never thinking about knowledge or job, just think will be a fisherman. Luckily, i realized the world out of that is so much interest than i known",
+        "2012-2015 - An Thoi high school",
+        "In first day of high school i wanna be a writer, i'm writing so much, but in the university entrance exam, the software engineer is my selected for future",
+        "2015-2018 - University of Science",
+        "I throught university life is just learn and learn more(i saw in film), but beside that i also learn so much another such as: about people, about friend, about family, about life",
     ]
     setText(textArray)
 }
@@ -113,7 +118,11 @@ function setTextVietnamese() {
         "Ngày sinh: 24/11/1997",
         "Địa chỉ: 45 Phùng Hưng, An Thới 2, Phú Quốc, Kiên Giang",
         "Xem thêm",
-
+        "Thời học sinh, sinh viên của tui khá kỳ lạ. Trong 9 năm đầu tiên của thời học sinh, tui chưa từng nghĩ hay hứng thú gì về kiến thức hay công việc sau này cả, cứ nghĩ rồi sẽ đi biển thôi. May mắn là những năm sau tui đã nhận ra được ngoài kia còn nhiều điều thú vị hơn nhiều",
+        "2012-2015 - THPT An Thới",
+        "Năm lớp 10 của cấp 3, tui luôn nghĩ mình sẽ thành nhà văn nên bản thân đã viết khá nhiều, nhưng tới đợt thi đại học thì tui nhận ra trở thành một kỹ sư lập trình mới là con đường đúng của mình",
+        "2015-2018 - Đại học Khoa học Tự nhiên",
+        "Hồi đó tui nghĩ là lên đại học là chỉ có học và học(coi phim thấy vậy), rồi lên đại học nhận ra là ngoài những kiến thức chuyên ngành thì đại học còn dạy mình rất nhiều thứ như: về con ngừoi, bạn bè, gia đình hay là cuộc sống",
     ]
     setText(textArray)
 }
@@ -173,6 +182,11 @@ function setText(textArray) {
     document.getElementById('birthday-info').innerText = textArray[25]
     document.getElementById('address-info').innerText = textArray[26]
     document.getElementById('next-btn').innerText = textArray[27]
+    document.getElementById('header-education').innerText = textArray[28]
+    document.getElementById('high-school-event').innerText = textArray[29]
+    document.getElementById('high-school-desc').innerText = textArray[30]
+    document.getElementById('university-event').innerText = textArray[31]
+    document.getElementById('university-desc').innerText = textArray[32]
 }
 
 function nextTab() {
@@ -289,13 +303,13 @@ function toggleTabAboutMe() {
 function toggleTabEducation() {
     toggleTab(tabEducation, tabAboutMe, tabExperience)
     hideAllInfomationWrapper()
-    document.getElementById('about-me-information-table').style.display = 'block'
+    document.getElementById('education-information-table').style.display = 'block'
 }
 
 function toggleTabExperience() {
     toggleTab(tabExperience, tabEducation, tabAboutMe)
     hideAllInfomationWrapper()
-    document.getElementById('about-me-information-table').style.display = 'block'
+    document.getElementById('experience-information-table').style.display = 'block'
 }
 
 function toggleTab(tabActive, tabNone1, tabNone2) {
