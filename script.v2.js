@@ -58,9 +58,9 @@ function getYearsOld() {
 function setTextEnglish() {
     let textArray = [
         'ABOUT ME', 'EDUCATION', 'EXPERIENCE',
-        "Except handsome, rich and well-studying are something i don't have, i'm also had so much else negative. Click this tab to explorer more about me and be my part of life.",
+        "Except handsome, rich and well-studying are something I don't have, I'm also had so much else negative. Click this tab to explorer more about me and be my part of life.",
         "I'm a Information Technology student of Ho Chi Minh University of Science - Vietnam National University. I can install windows for you but idk how to repair household appliances",
-        "In my childhood, i spend to much time to PC game, my mom always admonish because that, so that why i wanna to become a member of some game online company. And now, i'm a software engineer of VNG Corp",
+        "In my childhood, i spend to much time to PC game, my mom always admonish because that, so that why i wanna to become a member of some game online company. Finally, I was a software engineer of VNG Corp",
         getYearsOld().toString(),
         'YEARS OLD',
         'HEIGHT(cm)',
@@ -98,7 +98,7 @@ function setTextVietnamese() {
         'BẢN THÂN', 'HỌC VẤN', 'KINH NGHIỆM',
         "Ngoại trừ đẹp trai, nhà giàu, học giỏi là những thứ mình chưa có ra thì mình cũng còn rất nhiều thứ khác chưa tốt. Nhấn vào thẻ này để tìm hiểu thêm dề mình và mình cũng muốn bạn trở thành một phần trong hành trình cuộc sống.",
         "Là sinh viên khoa Công nghệ thông tin trường Đại học Khoa học Tự nhiên - Đại học quốc gia TP.HCM. mình biết cài win nhưng không biết sửa đồ điện gia dụng",
-        "Hồi nhỏ mình ghiền chơi điện tử lắm, nhưng mà bị má chửi hoài nên mong muốn được vào công ty game để được chơi game một cách hợp pháp. Hiện tại mình đang là dev tại công ty VNG",
+        "Hồi nhỏ mình ghiền chơi điện tử lắm, nhưng mà bị má chửi hoài nên mong muốn được vào công ty game để được chơi game một cách hợp pháp. Cuối cùng, mình đã từng trở thành 1 LTV của VNG",
         getYearsOld().toString(),
         'TUỔI',
         'CAO(cm)',
