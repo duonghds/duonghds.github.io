@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,6 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="607f8a60-f797-498b-93ff-e6462a4b51a5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tabs/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tabs/me_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tabs/me_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.v2.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.v2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/social/facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/social/facebook_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/social/f.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.v2.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.v2.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +38,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="GOROOT" url="file://C:/Program Files/Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -37,6 +49,12 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1mgdISulmoZrryd9OEGmMbivR71" />
   <component name="ProjectLevelVcsManager">
@@ -98,9 +116,11 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
   </component>
 </project>

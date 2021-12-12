@@ -81,14 +81,17 @@ function setTextEnglish() {
         "Phone Number:(+84) 332165795",
         "Birthday: 24/11/1997",
         "Live in: 45 Phung Hung, An Thoi 2, Phu Quoc, Kien Giang",
-        "Tap for more",
+        "Tap here for more",
         "My student life is so weired. In 9 years of school, i'm a stupid student never thinking about knowledge, job, just think will be a fisherman. Luckily, i realized the world out of that is so much interest than i known",
         "2012-2015 - An Thoi high school",
         "In first day of high school i wanna be a writer, i'm writing so much, but in the university entrance exam, the software engineer is my selected for future",
         "2015-2018 - University of Science",
         "I throught university life is just learn and learn more(i saw in film), but beside that i also learn so much another such as: about people, about friend, about family, about life",
-        "Download for view detail my working experience",
-        "DOWNLOAD RESUME"
+        "I had joined to VNG with title VNG Tech fresher when I'm a third-year student at university, sometime I feel it so weired because at this time my knowledge is zero(maybe negative number). Luckily, my colleagues is very helpful and friendly, i had learn so much from them. In present, I had quit from VNG, but i will never forget this adventure.",
+        "2018-2021 - VNG",
+        "With 3 years at VNG, I will call it is Wonderful Journey, i was learnt so much in here, meet the best colleagues. If you wanna find a working place with friendly colleagues, improve yourself so much? VNG will be the best choice for you",
+        "2021-2022 - Tiki",
+        "My journey at tiki is not long, but Tiki still is a good working place for improve youself. When I working at Tiki, I was realized my career path I must to growth in the future. Work at Tiki, u can free upsize from Passio at 2nd floor at Viettel building"
     ]
     setText(textArray)
 }
@@ -119,14 +122,17 @@ function setTextVietnamese() {
         "Điện thoại:(+84) 332165795",
         "Ngày sinh: 24/11/1997",
         "Địa chỉ: 45 Phùng Hưng, An Thới 2, Phú Quốc, Kiên Giang",
-        "Xem thêm",
+        "Xem thêm ở đây",
         "Thời học sinh của mình khá lạ. Trong 9 năm đầu, mình chưa từng hứng thú gì về kiến thức hay công việc sau này cả, cứ nghĩ rồi sẽ đi biển thôi. May mắn là những năm sau mình đã nhận ra được ngoài kia còn nhiều điều thú vị hơn nhiều",
         "2012-2015 - THPT An Thới",
         "Năm lớp 10 của cấp 3, mình luôn nghĩ mình sẽ thành nhà văn nên bản thân đã viết khá nhiều, nhưng tới đợt thi đại học thì mình nhận ra trở thành một kỹ sư lập trình mới là con đường đúng của mình",
         "2015-2018 - Đại học Khoa học Tự nhiên",
         "Hồi đó mình nghĩ là lên đại học là chỉ có học và học(coi phim thấy vậy), rồi lên đại học nhận ra là ngoài những kiến thức chuyên ngành thì đại học còn dạy mình rất nhiều thứ như: về con ngừoi, bạn bè, gia đình hay là cuộc sống",
-        "Tải về để xem chi tiết quá trình làm việc của mình nhé",
-        "TẢI RESUME"
+        "Mình đi làm từ hồi đầu năm 3 đại học, mà lúc đó học tệ lắm, mà cũng nhờ điều thần kỳ nào đó(chắc là ngu dễ bảo) thì qua vài vòng phỏng vấn mình cũng đã trở thành VNG Tech Fresher. Và may mắn hơn của mình là đã gặp được những người sếp, những người anh rất giỏi và nhiệt tình giúp đỡ mình trong công việc. Dù hiện tại không còn ở VNG nhưng hành trình ở đây mình sẽ khó mà quên được.",
+        "2018-2021 - VNG",
+        "Ba năm ở VNG có lẽ mình sẽ gọi là một Hành trình kỳ diệu, đây có lẽ là nơi mình đã học được rất nhiều thứ, gặp được những người đồng nghiệp tuyệt vời nhất. Nếu bạn cần tìm một nơi đồng nghiệp thân thiện, môi trường cực mở, phát triển? có lẽ VNG sẽ là nơi bạn nghĩ tới đầu tiên(và tôi cũng vậy)",
+        "2021-2022 - Tiki",
+        "Hành trình ở Tiki của mình có lẽ không dài nhưng Tiki vẫn là một nơi tuyệt vời để bản thân phát triển. Khi làm việc ở Tiki mình đã có thể nhận biết được con đường mình muốn đi là gì và chuẩn bị cho một tương lai xa hơn sau này. À, làm ở tiki được miễn phí upsize khi mua nước ở passio tầng 2 tòa nhà viettel nhé"
     ]
     setText(textArray)
 }
@@ -191,8 +197,11 @@ function setText(textArray) {
     document.getElementById('high-school-desc').innerText = textArray[30]
     document.getElementById('university-event').innerText = textArray[31]
     document.getElementById('university-desc').innerText = textArray[32]
-    document.getElementById('download-desc').innerText = textArray[33]
-    document.getElementById('download-label').innerText = textArray[34]
+    document.getElementById('header-working').innerText = textArray[33]
+    document.getElementById('vng-event').innerText = textArray[34]
+    document.getElementById('vng-desc').innerText = textArray[35]
+    document.getElementById('tiki-event').innerText = textArray[36]
+    document.getElementById('tiki-desc').innerText = textArray[37]
 }
 
 function nextTab() {

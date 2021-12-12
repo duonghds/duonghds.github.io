@@ -282,11 +282,13 @@ div {
     margin-bottom: 15px;
     color: black;
     display: flex;
+    justify-content: center;
 }
 
 .information-table .left-block img {
     width: 60%;
     height: auto;
+    margin-left: 0px;
 }
 
 .information-table .right-block {
@@ -552,12 +554,26 @@ div {
 .information-table .full-block {
     width: 100%;
 }
+
+.information-table .full-block-working {
+    width: 100%;
+}
 .full-block * {
+    box-sizing: border-box;
+}
+
+.full-block-working * {
     box-sizing: border-box;
 }
 
 /* The actual timeline (the vertical ruler) */
 .full-block  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.full-block-working  .timeline {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
@@ -575,8 +591,26 @@ div {
     margin-left: -3px;
 }
 
+.full-block-working  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: black;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
 /* Container around content */
 .full-block .container {
+    padding: 10px 25px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.full-block-working .container {
     padding: 10px 25px;
     position: relative;
     background-color: inherit;
@@ -597,13 +631,34 @@ div {
     z-index: 1;
 }
 
+.full-block-working .container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #3485a3;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
 /* Place the container to the left */
 .full-block .left {
     left: 0;
 }
 
+.full-block-working .left {
+    left: 0;
+}
+
 /* Place the container to the right */
 .full-block .right {
+    left: 50%;
+}
+
+.full-block-working .right {
     left: 50%;
 }
 
@@ -621,6 +676,19 @@ div {
     border-color: transparent transparent transparent #FF9F55;
 }
 
+.full-block-working .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 16px;
+    border: medium solid #3485a3;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #3485a3;
+}
+
 /* Add arrows to the right container (pointing left) */
 .full-block .right::before {
     content: " ";
@@ -635,8 +703,25 @@ div {
     border-color: transparent #FF9F55 transparent transparent;
 }
 
+.full-block-working .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 16px;
+    border: medium solid #3485a3;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #3485a3 transparent transparent;
+}
+
 /* Fix the circle for containers on the right side */
 .full-block .right::after {
+    left: -16px;
+}
+
+.full-block-working .right::after {
     left: -16px;
 }
 
@@ -648,7 +733,18 @@ div {
     border-radius: 6px;
 }
 
+.full-block-working .content {
+    padding: 10px 30px;
+    background-color: #3485a3;
+    position: relative;
+    border-radius: 6px;
+}
+
 .full-block .content h2 {
+    font-size: large;
+}
+
+.full-block-working .content h2 {
     font-size: large;
 }
 
@@ -689,6 +785,43 @@ div {
 
     /* Make all right containers behave like the left ones */
     .full-block .right {
+        left: 0;
+    }
+
+    .full-block-working .timeline::after {
+        left: 31px;
+    }
+
+    .full-block-working .content {
+        padding: 1px 10px;
+    }
+
+    /* Full-width containers */
+    .full-block-working .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 0;
+    }
+    .full-block-working .content h2 {
+        margin-top: 5px;
+        margin-bottom: -5px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .full-block-working .container::before {
+        left: 60px;
+        border: medium solid #3485a3;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #3485a3 transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .full-block-working .left::after, .full-block-working .right::after {
+        left: 15px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .full-block-working .right {
         left: 0;
     }
 }
