@@ -4,7 +4,7 @@
 
  <HEAD>
 
-  <TITLE> New Document </TITLE>
+  <TITLE> RIE </TITLE>
 
   <META NAME="Generator" CONTENT="EditPlus">
 
@@ -15,6 +15,22 @@
   <META NAME="Description" CONTENT="">
 
   <style>
+  .text-rainbow-animation {
+  font-family:arial black;
+  font-size:70px;
+  background-image: 
+    linear-gradient(to right, red,orange,pink,violet, red); 
+  -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+  animation: rainbow-animation 300s linear infinite;
+}
+
+@keyframes rainbow-animation {
+    to {
+        background-position: 4500vh;
+    }
+}
+}
 
   html, body {
 
@@ -46,7 +62,9 @@ canvas {
  <BODY>
 
   <canvas id="pinkboard"></canvas>
-
+  <div style="width: 100%; height: 100%; background-color: black; justify-content: center; display: flex; flex-direction: column">
+  	<p class="text-rainbow-animation" style="color: white; width: 100%; text-align: center; font-size: 60px; font-family: 'Brush Script MT', cursive;">RIE</p>
+  </div>
   <script>
 
   /*
