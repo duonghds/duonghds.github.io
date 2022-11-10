@@ -1,277 +1,521 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src='script.v2.js'></script>
-    <link href="style.v2.css" rel="stylesheet"/>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.png"/>
-    <title>Dương Hoàng</title>
-</head>
-<body>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 
-<div class="background"></div>
-<div class="language-background">
-    <img id="vietnam-language-background" src="national/vietnam.png">
-    <img id="british-language-background" src="national/british.png">
-</div>
-<div class="popup-background" id="popup-background" style="display: none">
-    <div class="choose-language-popup" id="popup-language">
-        <p>Ngôn ngữ/Language</p>
-        <div class="national">
-            <img id="vietnam-language" src="national/vietnam.png">
-            <img id="british-language" src="national/british.png">
-        </div>
-    </div>
-</div>
-<div class="popup-wrapper" id="popup-wrapper" style="display: none">
-    <img src="./social/shipping.png" alt="" class="shipping" id="shipping-car">
-    <div class="popup-contact" id="popup-contact">
-        <div class="left-image">
-            <img src="./background_v2/doggo.png" alt="">
-        </div>
-        <div class="right-input">
-            <p class="label-contact" id="label-contact">Contact with me</p>
-            <div class="row-input">
-                <p class="label-row-input" id="email-contact">Email</p>
-                <input type="text" class="contact-input" id="email-contact-input">
-            </div>
-            <div class="row-input">
-                <p class="label-row-input" id="name-contact">Name</p>
-                <input type="text" class="contact-input" id="name-contact-input">
-            </div>
-            <div class="row-input" style="height: 40%">
-                <p class="label-row-input" id="message-contact">Msg</p>
-                <textarea type="text" class="contact-input" id="message-contact-input"></textarea>
-            </div>
-            <div class="row-input submit">
-                <p class="submit-contact" id="submit-contact-button">Submit</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="information-table" id="information-table" style="display: flex">
-    <div class="cancel-btn" id="cancel-btn">
-        <img src="./social/cancel.png" alt="">
-    </div>
-    <div id="about-me-information-table" style="display: none" class="information-table-wrapper">
-        <div class="header-information">
-            <p id="header-information"></p>
-        </div>
-        <div class="content-information" id="content-information">
-            <div class="left-block">
-                <div class="row" id="hobbies-label">HOBBIES</div>
-                <div class="row">
-                    <img src="./social/football.png" alt="">
-                </div>
-                <div class="row">
-                    <img src="./social/game-controller.png" alt="">
-                </div>
-                <div class="row">
-                    <img src="./social/writing.png" alt="">
-                </div>
-            </div>
-            <div class="right-block">
-                <div class="row header" id="information-label">INFORMATION</div>
-                <div class="row">
-                    <img src="./social/telephone.png" alt="">
-                    <a id="phone-number-info" href="tel: 0332165795">Phone number:(+84) 332165795</a>
+<HTML>
 
-                </div>
-                <div class="row">
-                    <img src="./social/birthday.png" alt="">
-                    <a id="birthday-info" href="https://www.facebook.com/hdsduong24">Birthday: 24/11/1997</a>
+ <HEAD>
 
-                </div>
-                <div class="row">
-                    <img src="./social/email.png" alt="">
-                    <a id="email-info" href="mailto:duonghoang2411@gmail.com">Email: duonghoang2411@gmail.com</a>
-                </div>
-                <div class="row">
-                    <img src="./social/address.png" alt="">
-                    <a href="https://goo.gl/maps/BNV6o7hYNG1rohRe7" id="address-info">
-                        Live in: 45 Phung Hung, An Thoi 2, Phu Quoc, Kien Giang
-                    </a>
-                </div>
-                <div class="row">
-                    <img src="social/f.png" alt="">
-                    <a href="https://www.facebook.com/hdsduong24/">Facebook: Hoàng Đình Sơn Dương</a>
-                </div>
-                <div class="row">
-                    <img src="./social/linkedin.png" alt="">
-                    <a href="https://www.linkedin.com/in/d%C6%B0%C6%A1ng-ho%C3%A0ng-26952a1b1/">Linkedin: Dương
-                        Hoàng</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="education-information-table" style="display: none" class="information-table-wrapper">
-        <div class="header-information">
-            <p id="header-education">In 9 years of school, i'm a stupid student and never thinking about knowledge or
-                job. Luckily, i realized the world out of my hometown is so much interest than i know</p>
-        </div>
-        <div class="full-block">
-            <div class="timeline">
-                <div class="container left">
-                    <div class="content">
-                        <h2 id="high-school-event">2012-2015 - An Thoi high school</h2>
-                        <p id="high-school-desc">In first day of high school i wanna be a writer, i'm writing so much,
-                            but in the university entrance exam, the software engineer is my selected for future</p>
-                    </div>
-                </div>
-                <div class="container right">
-                    <div class="content">
-                        <h2 id="university-event">2015-2018 - University of science</h2>
-                        <p id="university-desc">I throught university life is just learn and learn more, but beside that
-                            i also learn so much another such as: about people, about friend, about family, about
-                            life</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="experience-information-table" style="display: none" class="information-table-wrapper">
-        <div class="header-information">
-            <p id="header-working">In 9 years of school, i'm a stupid student and never thinking about knowledge or
-                job. Luckily, i realized the world out of my hometown is so much interest than i know</p>
-        </div>
-        <div class="full-block-working">
-            <div class="timeline">
-                <div class="container left">
-                    <div class="content">
-                        <h2 id="vng-event">2012-2015 - An Thoi high school</h2>
-                        <p id="vng-desc">In first day of high school i wanna be a writer, i'm writing so much,
-                            but in the university entrance exam, the software engineer is my selected for future</p>
-                    </div>
-                </div>
-                <div class="container right">
-                    <div class="content">
-                        <h2 id="tiki-event">2015-2018 - University of science</h2>
-                        <p id="tiki-desc">I throught university life is just learn and learn more, but beside that
-                            i also learn so much another such as: about people, about friend, about family, about
-                            life</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="line-card" class="line-card" style="display: none">
-    <div class="card" id="tab-about-me">
-        <div class="card-header-wallpaper">
-            <img src="tabs/me.png" alt="">
-        </div>
-        <div class="card-content">
-            <p class="milestone" style="color: #d4635e">1997</p>
-            <p class="tabs-text" id="about-me">Về bản thân</p>
-            <p class="description" id="about-me-des">The standard chunk of Lorem Ipsum used since the 1500s is
-                reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
-                Malorum"</p>
-        </div>
-        <div class="card-footer" style="background: #d4635e">
-            <div class="block">
-                <p class="number" id="years-old-numb">20</p>
-                <p class="text" id="years-old">YEARS OLD</p>
-            </div>
-            <div class="line"></div>
-            <div class="block">
-                <p class="number" id="height-numb">170</p>
-                <p class="text" id="height">HEIGHT</p>
-            </div>
-            <div class="line"></div>
-            <div class="block">
-                <p class="number" id="nation-numb">1</p>
-                <p class="text" id="nation">TRAVEL</p>
-            </div>
-        </div>
-    </div>
+  <TITLE> New Document </TITLE>
 
-    <div class="card" id="tab-education">
-        <div class="card-header-wallpaper">
-            <img src="./tabs/khtn.png" alt="">
-        </div>
-        <div class="card-content">
-            <p class="milestone" style="color: #d2d740">2015</p>
-            <p class="tabs-text" id="education">Học vấn</p>
-            <p class="description" id="education-des">The standard chunk of Lorem Ipsum used since the 1500s is
-                reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
-                Malorum"</p>
-        </div>
-        <div class="card-footer" style="background: #d2d740">
-            <div class="block">
-                <p class="number" id="graduated-numb">2018</p>
-                <p class="text" id="graduated">GRADUATED</p>
-            </div>
-            <div class="line"></div>
-            <div class="block">
-                <p class="number" id="gpa-numb">3.0/4.0</p>
-                <p class="text" id="gpa">GPA</p>
-            </div>
-            <div class="line"></div>
-            <div class="block">
-                <p class="number" id="ielts-numb">N/A</p>
-                <p class="text" id="ielts">IELTS</p>
-            </div>
-        </div>
-    </div>
+  <META NAME="Generator" CONTENT="EditPlus">
 
-    <div class="card" id="tab-experience">
-        <div class="card-header-wallpaper">
-            <img src="./tabs/tiki.png" alt="">
-        </div>
-        <div class="card-content">
-            <p class="milestone" style="color: #3485a3">2018</p>
-            <p class="tabs-text" id="experience">Kinh nghiệm</p>
-            <p class="description" id="experience-des">The standard chunk of Lorem Ipsum used since the 1500s is
-                reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et
-                Malorum"</p>
-        </div>
-        <div class="card-footer" style="background: #3485a3">
-            <div class="block">
-                <p class="number" id="company-numb">2</p>
-                <p class="text" id="company">COMPANY</p>
-            </div>
-            <div class="line"></div>
-            <div class="block">
-                <p class="number" id="product-numb">3</p>
-                <p class="text" id="product">PRODUCT</p>
-            </div>
-            <div class="line"></div>
-            <div class="block">
-                <p class="number" id="experience-numb">4+</p>
-                <p class="text" id="experience-doing">EXPERIENCE</p>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="direct-button" id="direct-button">
-    <div class="right-block" style="width: 100%">
-        <p id="next-btn">Tap for more</p>
-    </div>
-</div>
-<div class="social-info" id="social-info" style="display: none">
-    <div class="left-block">
-        <p id="views-number">0</p>
-        <img src="./social/visibility.png" alt="" width="30" height="30">
-    </div>
-    <div class="view-line"></div>
-    <div class="right-block" id="contact-block">
-        <p id="contact-button">Contact</p>
-        <img src="./social/handshake.png" alt="" width="30" height="30">
-    </div>
-</div>
-</body>
-<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+  <META NAME="Author" CONTENT="">
 
-<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <META NAME="Keywords" CONTENT="">
 
-<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+  <META NAME="Description" CONTENT="">
 
-<!-- Add Firebase products that you want to use -->
-<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
-</html>
+  <style>
+
+  html, body {
+
+  height: 100%;
+
+  padding: 0;
+
+  margin: 0;
+
+  background: #000;
+
+}
+
+canvas {
+
+  position: absolute;
+
+  width: 100%;
+
+  height: 100%;
+
+}
+
+  </style>
+
+ </HEAD>
+
+
+ <BODY>
+
+  <canvas id="pinkboard"></canvas>
+
+  <script>
+
+  /*
+
+ * Settings
+
+ */
+
+var settings = {
+
+  particles: {
+
+    length:   500, // maximum amount of particles
+
+    duration:   2, // particle duration in sec
+
+    velocity: 100, // particle velocity in pixels/sec
+
+    effect: -0.75, // play with this for a nice effect
+
+    size:      30, // particle size in pixels
+
+  },
+
+};
+
+
+/*
+
+ * RequestAnimationFrame polyfill by Erik Möller
+
+ */
+
+(function(){var b=0;var c=["ms","moz","webkit","o"];for(var a=0;a<c.length&&!window.requestAnimationFrame;++a){window.requestAnimationFrame=window[c[a]+"RequestAnimationFrame"];window.cancelAnimationFrame=window[c[a]+"CancelAnimationFrame"]||window[c[a]+"CancelRequestAnimationFrame"]}if(!window.requestAnimationFrame){window.requestAnimationFrame=function(h,e){var d=new Date().getTime();var f=Math.max(0,16-(d-b));var g=window.setTimeout(function(){h(d+f)},f);b=d+f;return g}}if(!window.cancelAnimationFrame){window.cancelAnimationFrame=function(d){clearTimeout(d)}}}());
+
+
+/*
+
+ * Point class
+
+ */
+
+var Point = (function() {
+
+  function Point(x, y) {
+
+    this.x = (typeof x !== 'undefined') ? x : 0;
+
+    this.y = (typeof y !== 'undefined') ? y : 0;
+
+  }
+
+  Point.prototype.clone = function() {
+
+    return new Point(this.x, this.y);
+
+  };
+
+  Point.prototype.length = function(length) {
+
+    if (typeof length == 'undefined')
+
+      return Math.sqrt(this.x * this.x + this.y * this.y);
+
+    this.normalize();
+
+    this.x *= length;
+
+    this.y *= length;
+
+    return this;
+
+  };
+
+  Point.prototype.normalize = function() {
+
+    var length = this.length();
+
+    this.x /= length;
+
+    this.y /= length;
+
+    return this;
+
+  };
+
+  return Point;
+
+})();
+
+
+/*
+
+ * Particle class
+
+ */
+
+var Particle = (function() {
+
+  function Particle() {
+
+    this.position = new Point();
+
+    this.velocity = new Point();
+
+    this.acceleration = new Point();
+
+    this.age = 0;
+
+  }
+
+  Particle.prototype.initialize = function(x, y, dx, dy) {
+
+    this.position.x = x;
+
+    this.position.y = y;
+
+    this.velocity.x = dx;
+
+    this.velocity.y = dy;
+
+    this.acceleration.x = dx * settings.particles.effect;
+
+    this.acceleration.y = dy * settings.particles.effect;
+
+    this.age = 0;
+
+  };
+
+  Particle.prototype.update = function(deltaTime) {
+
+    this.position.x += this.velocity.x * deltaTime;
+
+    this.position.y += this.velocity.y * deltaTime;
+
+    this.velocity.x += this.acceleration.x * deltaTime;
+
+    this.velocity.y += this.acceleration.y * deltaTime;
+
+    this.age += deltaTime;
+
+  };
+
+  Particle.prototype.draw = function(context, image) {
+
+    function ease(t) {
+
+      return (--t) * t * t + 1;
+
+    }
+
+    var size = image.width * ease(this.age / settings.particles.duration);
+
+    context.globalAlpha = 1 - this.age / settings.particles.duration;
+
+    context.drawImage(image, this.position.x - size / 2, this.position.y - size / 2, size, size);
+
+  };
+
+  return Particle;
+
+})();
+
+
+/*
+
+ * ParticlePool class
+
+ */
+
+var ParticlePool = (function() {
+
+  var particles,
+
+      firstActive = 0,
+
+      firstFree   = 0,
+
+      duration    = settings.particles.duration;
+
+ 
+
+  function ParticlePool(length) {
+
+    // create and populate particle pool
+
+    particles = new Array(length);
+
+    for (var i = 0; i < particles.length; i++)
+
+      particles[i] = new Particle();
+
+  }
+
+  ParticlePool.prototype.add = function(x, y, dx, dy) {
+
+    particles[firstFree].initialize(x, y, dx, dy);
+
+   
+
+    // handle circular queue
+
+    firstFree++;
+
+    if (firstFree   == particles.length) firstFree   = 0;
+
+    if (firstActive == firstFree       ) firstActive++;
+
+    if (firstActive == particles.length) firstActive = 0;
+
+  };
+
+  ParticlePool.prototype.update = function(deltaTime) {
+
+    var i;
+
+   
+
+    // update active particles
+
+    if (firstActive < firstFree) {
+
+      for (i = firstActive; i < firstFree; i++)
+
+        particles[i].update(deltaTime);
+
+    }
+
+    if (firstFree < firstActive) {
+
+      for (i = firstActive; i < particles.length; i++)
+
+        particles[i].update(deltaTime);
+
+      for (i = 0; i < firstFree; i++)
+
+        particles[i].update(deltaTime);
+
+    }
+
+   
+
+    // remove inactive particles
+
+    while (particles[firstActive].age >= duration && firstActive != firstFree) {
+
+      firstActive++;
+
+      if (firstActive == particles.length) firstActive = 0;
+
+    }
+
+   
+
+   
+
+  };
+
+  ParticlePool.prototype.draw = function(context, image) {
+
+    // draw active particles
+
+    if (firstActive < firstFree) {
+
+      for (i = firstActive; i < firstFree; i++)
+
+        particles[i].draw(context, image);
+
+    }
+
+    if (firstFree < firstActive) {
+
+      for (i = firstActive; i < particles.length; i++)
+
+        particles[i].draw(context, image);
+
+      for (i = 0; i < firstFree; i++)
+
+        particles[i].draw(context, image);
+
+    }
+
+  };
+
+  return ParticlePool;
+
+})();
+
+
+/*
+
+ * Putting it all together
+
+ */
+
+(function(canvas) {
+
+  var context = canvas.getContext('2d'),
+
+      particles = new ParticlePool(settings.particles.length),
+
+      particleRate = settings.particles.length / settings.particles.duration, // particles/sec
+
+      time;
+
+ 
+
+  // get point on heart with -PI <= t <= PI
+
+  function pointOnHeart(t) {
+
+    return new Point(
+
+      160 * Math.pow(Math.sin(t), 3),
+
+      130 * Math.cos(t) - 50 * Math.cos(2 * t) - 20 * Math.cos(3 * t) - 10 * Math.cos(4 * t) + 25
+
+    );
+
+  }
+
+ 
+
+  // creating the particle image using a dummy canvas
+
+  var image = (function() {
+
+    var canvas  = document.createElement('canvas'),
+
+        context = canvas.getContext('2d');
+
+    canvas.width  = settings.particles.size;
+
+    canvas.height = settings.particles.size;
+
+    // helper function to create the path
+
+    function to(t) {
+
+      var point = pointOnHeart(t);
+
+      point.x = settings.particles.size / 2 + point.x * settings.particles.size / 350;
+
+      point.y = settings.particles.size / 2 - point.y * settings.particles.size / 350;
+
+      return point;
+
+    }
+
+    // create the path
+
+    context.beginPath();
+
+    var t = -Math.PI;
+
+    var point = to(t);
+
+    context.moveTo(point.x, point.y);
+
+    while (t < Math.PI) {
+
+      t += 0.01; // baby steps!
+
+      point = to(t);
+
+      context.lineTo(point.x, point.y);
+
+    }
+
+    context.closePath();
+
+    // create the fill
+
+    context.fillStyle = '#ea80b0';
+
+    context.fill();
+
+    // create the image
+
+    var image = new Image();
+
+    image.src = canvas.toDataURL();
+
+    return image;
+
+  })();
+
+ 
+
+  // render that thing!
+
+  function render() {
+
+    // next animation frame
+
+    requestAnimationFrame(render);
+
+   
+
+    // update time
+
+    var newTime   = new Date().getTime() / 1000,
+
+        deltaTime = newTime - (time || newTime);
+
+    time = newTime;
+
+   
+
+    // clear canvas
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+   
+
+    // create new particles
+
+    var amount = particleRate * deltaTime;
+
+    for (var i = 0; i < amount; i++) {
+
+      var pos = pointOnHeart(Math.PI - 2 * Math.PI * Math.random());
+
+      var dir = pos.clone().length(settings.particles.velocity);
+
+      particles.add(canvas.width / 2 + pos.x, canvas.height / 2 - pos.y, dir.x, -dir.y);
+
+    }
+
+   
+
+    // update and draw particles
+
+    particles.update(deltaTime);
+
+    particles.draw(context, image);
+
+  }
+
+ 
+
+  // handle (re-)sizing of the canvas
+
+  function onResize() {
+
+    canvas.width  = canvas.clientWidth;
+
+    canvas.height = canvas.clientHeight;
+
+  }
+
+  window.onresize = onResize;
+
+ 
+
+  // delay rendering bootstrap
+
+  setTimeout(function() {
+
+    onResize();
+
+    render();
+
+  }, 10);
+
+})(document.getElementById('pinkboard'));
+
+  </script>
+
+ </BODY>
+
+</HTML>
