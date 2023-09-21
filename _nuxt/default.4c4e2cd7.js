@@ -1,0 +1,1 @@
+import{_ as a,c as t,d as o,M as s,o as r}from"./entry.f60c04d3.js";const c={};function l(e,n){return r(),t("div",null,[o(" Some default layout shared across all pages "),s(e.$slots,"default")])}const f=a(c,[["render",l]]);export{f as default};

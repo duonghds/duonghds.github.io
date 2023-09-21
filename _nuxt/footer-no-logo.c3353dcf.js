@@ -1,0 +1,1 @@
+import{_ as r,c as t,M as s,a as e,o as c}from"./entry.f60c04d3.js";const a={},l=e("footer",{class:"footer"},[e("div",{class:"copyright"},"copyright ©コープ東北サンネット事業連合 all right reserved.")],-1);function n(o,d){return c(),t("div",null,[s(o.$slots,"default"),l])}const _=r(a,[["render",n]]);export{_ as default};
